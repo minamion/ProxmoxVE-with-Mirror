@@ -4,7 +4,7 @@
 # Author: michelroegl-brunner
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 
-source /dev/stdin <<<$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/api.func)
+source /dev/stdin <<<$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/api.func)
 
 function header_info {
   clear
@@ -571,7 +571,7 @@ DESCRIPTION=$(
   cat <<EOF
 <div align='center'>
   <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://raw.githubusercontent.com/michelroegl-brunner/ProxmoxVE/refs/heads/develop/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
+    <img src='https://gh-proxy.com/raw.githubusercontent.commichelroegl-brunner/ProxmoxVE/refs/heads/develop/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
   </a>
 
   <h2 style='font-size: 24px; margin: 20px 0;'>OPNsense VM</h2>
@@ -609,7 +609,7 @@ msg_ok "Starting OPNsense VM (Patience this takes 20-30 minutes)"
 qm start $VMID
 sleep 90
 send_line_to_vm "root"
-send_line_to_vm "fetch https://raw.githubusercontent.com/opnsense/update/master/src/bootstrap/opnsense-bootstrap.sh.in"
+send_line_to_vm "fetch https://gh-proxy.com/raw.githubusercontent.comopnsense/update/master/src/bootstrap/opnsense-bootstrap.sh.in"
 qm set $VMID \
   -net1 virtio,bridge=${WAN_BRG},macaddr=${WAN_MAC} &>/dev/null
 sleep 10

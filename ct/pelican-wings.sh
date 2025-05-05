@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -35,7 +35,7 @@ function update_script() {
 
     msg_info "Updating ${APP} to v${RELEASE}"
     rm /usr/local/bin/wings
-curl -fsSL "https://github.com/pelican-dev/wings/releases/download/v${RELEASE}/wings_linux_amd64" -o "/usr/local/bin/wings"
+    curl -fsSL "https://github.com/pelican-dev/wings/releases/download/v${RELEASE}/wings_linux_amd64" -o "/usr/local/bin/wings"
     chmod u+x /usr/local/bin/wings
     echo "${RELEASE}" >/opt/${APP}_version.txt
     msg_ok "Updated $APP to v${RELEASE}"

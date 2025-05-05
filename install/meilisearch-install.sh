@@ -23,7 +23,7 @@ tmp_file=$(mktemp)
 RELEASE=$(curl -s https://api.github.com/repos/meilisearch/meilisearch/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL https://github.com/meilisearch/meilisearch/releases/latest/download/meilisearch.deb -o $tmp_file
 $STD dpkg -i $tmp_file
-curl -fsSL https://raw.githubusercontent.com/meilisearch/meilisearch/latest/config.toml -o /etc/meilisearch.toml
+curl -fsSL https://gh-proxy.com/raw.githubusercontent.commeilisearch/meilisearch/latest/config.toml -o /etc/meilisearch.toml
 MASTER_KEY=$(openssl rand -base64 12)
 LOCAL_IP="$(hostname -I | awk '{print $1}')"
 sed -i \
@@ -63,7 +63,7 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
     cd /opt/meilisearch-ui
     sed -i 's|const hash = execSync("git rev-parse HEAD").toString().trim();|const hash = "unknown";|' /opt/meilisearch-ui/vite.config.ts
     $STD pnpm install
-    cat <<EOF > /opt/meilisearch-ui/.env.local
+    cat <<EOF >/opt/meilisearch-ui/.env.local
 VITE_SINGLETON_MODE=true
 VITE_SINGLETON_HOST=http://${LOCAL_IP}:7700
 VITE_SINGLETON_API_KEY=${MASTER_KEY}
@@ -88,7 +88,7 @@ EOF
 systemctl enable -q --now meilisearch
 
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
-cat <<EOF > /etc/systemd/system/meilisearch-ui.service
+    cat <<EOF >/etc/systemd/system/meilisearch-ui.service
 [Unit]
 Description=Meilisearch UI Service
 After=network.target meilisearch.service
@@ -107,11 +107,10 @@ SyslogIdentifier=meilisearch-ui
 [Install]
 WantedBy=multi-user.target
 EOF
-systemctl enable -q --now meilisearch-ui
+    systemctl enable -q --now meilisearch-ui
 fi
 
 msg_ok "Set up Services"
-
 
 motd_ssh
 customize

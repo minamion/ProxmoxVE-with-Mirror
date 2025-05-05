@@ -129,4 +129,4 @@ info "Successfully Transferred Data."
 
 # Use to copy all data from a Home Assistant LXC to a Podman Home Assistant LXC
 # run from the Proxmox Shell
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/mainmain/tools/copy-data//home-assistant-container-copy-data-podman-home-assistant.sh)"
+# bash -c "$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//mainmain/tools/copy-data//home-assistant-container-copy-data-podman-home-assistant.sh)"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -33,7 +33,7 @@ function update_script() {
 
   msg_info "Updating ${APP}"
   RELEASE=$(curl -fsSL https://codeberg.org/api/v1/repos/forgejo/forgejo/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+' | sed 's/^v//')
-curl -fsSL "https://codeberg.org/forgejo/forgejo/releases/download/v${RELEASE}/forgejo-${RELEASE}-linux-amd64" -o "forgejo-$RELEASE-linux-amd64"
+  curl -fsSL "https://codeberg.org/forgejo/forgejo/releases/download/v${RELEASE}/forgejo-${RELEASE}-linux-amd64" -o "forgejo-$RELEASE-linux-amd64"
   rm -rf /opt/forgejo/*
   cp -r forgejo-$RELEASE-linux-amd64 /opt/forgejo/forgejo-$RELEASE-linux-amd64
   chmod +x /opt/forgejo/forgejo-$RELEASE-linux-amd64

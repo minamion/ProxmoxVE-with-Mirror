@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck | Co-Author: MickLesk (Canbiz)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -37,7 +37,7 @@ function update_script() {
     rm -rf homebox_bak
     rm -rf /tmp/homebox.tar.gz
     mv homebox homebox_bak
-curl -fsSL "https://github.com/sysadminsmedia/homebox/releases/download/${RELEASE}/homebox_Linux_x86_64.tar.gz" -o "/tmp/homebox.tar.gz"
+    curl -fsSL "https://github.com/sysadminsmedia/homebox/releases/download/${RELEASE}/homebox_Linux_x86_64.tar.gz" -o "/tmp/homebox.tar.gz"
     tar -xzf /tmp/homebox.tar.gz -C /opt
     chmod +x /opt/homebox
     echo "${RELEASE}" >/opt/${APP}_version.txt

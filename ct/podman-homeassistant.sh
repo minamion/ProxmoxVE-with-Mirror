@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -68,7 +68,7 @@ function update_script() {
   if [ "$UPD" == "3" ]; then
     IP=$(hostname -I | awk '{print $1}')
     msg_info "Installing FileBrowser"
-    $STD curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+    $STD curl -fsSL https://gh-proxy.com/raw.githubusercontent.comfilebrowser/get/master/get.sh | bash
     $STD filebrowser config init -a '0.0.0.0'
     $STD filebrowser config set -a '0.0.0.0'
     $STD filebrowser users add admin helper-scripts.com --perm.admin

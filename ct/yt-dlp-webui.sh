@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: CrazyWolf13
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -40,7 +40,7 @@ function update_script() {
 
       msg_info "Updating $APP to v${RELEASE}"
       rm -rf /usr/local/bin/yt-dlp-webui
-curl -fsSL "https://github.com/marcopiovanello/yt-dlp-web-ui/releases/download/v${RELEASE}/yt-dlp-webui_linux-amd64" -o "/usr/local/bin/yt-dlp-webui"
+      curl -fsSL "https://github.com/marcopiovanello/yt-dlp-web-ui/releases/download/v${RELEASE}/yt-dlp-webui_linux-amd64" -o "/usr/local/bin/yt-dlp-webui"
       chmod +x /usr/local/bin/yt-dlp-webui
       msg_ok "Updated $APP LXC"
 

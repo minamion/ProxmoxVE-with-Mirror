@@ -40,7 +40,7 @@ blocking:
   # definition of denylist groups. Can be external link (http/https) or local file
   denylists:
     ads:
-      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://gh-proxy.com/raw.githubusercontent.comStevenBlack/hosts/master/hosts
   # definition: which groups should be applied for which client
   clientGroupsBlock:
     # default will be used, if no special definition for a client name exists

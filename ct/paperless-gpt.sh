@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -35,7 +35,7 @@ function update_script() {
 
         msg_info "Updating Paperless-GPT to ${RELEASE}"
         temp_file=$(mktemp)
-curl -fsSL "https://github.com/icereed/paperless-gpt/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+        curl -fsSL "https://github.com/icereed/paperless-gpt/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
         tar zxf $temp_file
         rm -rf /opt/paperless-gpt
         mv paperless-gpt-${RELEASE} /opt/paperless-gpt

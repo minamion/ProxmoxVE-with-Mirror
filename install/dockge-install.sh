@@ -36,7 +36,7 @@ msg_ok "Installed Docker Compose $DOCKER_COMPOSE_LATEST_VERSION"
 
 msg_info "Installing Dockge"
 mkdir -p /opt/{dockge,stacks}
-curl -fsSL "https://raw.githubusercontent.com/louislam/dockge/master/compose.yaml" -o "/opt/dockge/compose.yaml"
+curl -fsSL "https://gh-proxy.com/raw.githubusercontent.comlouislam/dockge/master/compose.yaml" -o "/opt/dockge/compose.yaml"
 cd /opt/dockge
 $STD docker compose up -d
 msg_ok "Installed Dockge"

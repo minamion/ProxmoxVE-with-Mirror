@@ -38,14 +38,14 @@ excluded_containers=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "
 
 if [ $? -ne 0 ]; then
   exit
-fi  
+fi
 
 function clean_container() {
   container=$1
   header_info
   name=$(pct exec "$container" hostname)
   echo -e "${BL}[Info]${GN} Cleaning ${name} ${CL} \n"
-  pct exec "$container" -- bash -c "apt-get -y --purge autoremove && apt-get -y autoclean && bash <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/clean.sh) && rm -rf /var/lib/apt/lists/* && apt-get update"
+  pct exec "$container" -- bash -c "apt-get -y --purge autoremove && apt-get -y autoclean && bash <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/tools/pve/clean.sh) && rm -rf /var/lib/apt/lists/* && apt-get update"
 }
 for container in $(pct list | awk '{if(NR>1) print $1}'); do
   if [[ " ${excluded_containers[@]} " =~ " $container " ]]; then

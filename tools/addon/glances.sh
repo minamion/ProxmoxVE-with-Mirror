@@ -74,7 +74,7 @@ install() {
   fi
   msg_info "Installing $APP"
   rm -rf /usr/lib/python3.*/EXTERNALLY-MANAGED
-  $STD bash -c "$(curl -fsSL https://raw.githubusercontent.com/nicolargo/glancesautoinstall/master/install.sh)"
+  $STD bash -c "$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comnicolargo/glancesautoinstall/master/install.sh)"
   cat <<EOF >/etc/systemd/system/glances.service
 [Unit]
 Description=Glances - An eye on your system
@@ -99,7 +99,7 @@ uninstall() {
   msg_info "Uninstalling $APP"
   if [ -n "$SPINNER_PID" ] && ps -p $SPINNER_PID >/dev/null; then kill $SPINNER_PID >/dev/null; fi
   systemctl disable -q --now glances
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/nicolargo/glancesautoinstall/master/uninstall.sh)"
+  bash -c "$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comnicolargo/glancesautoinstall/master/uninstall.sh)"
   rm -rf /etc/systemd/system/glances.service
   msg_ok "Uninstalled $APP"
   msg_ok "Completed Successfully!\n"

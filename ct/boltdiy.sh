@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -37,7 +37,7 @@ function update_script() {
         temp_dir=$(mktemp -d)
         temp_file=$(mktemp)
         cd $temp_dir
-curl -fsSL "https://github.com/stackblitz-labs/bolt.diy/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+        curl -fsSL "https://github.com/stackblitz-labs/bolt.diy/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
         tar xzf $temp_file
         cp -rf bolt.diy-${RELEASE}/* /opt/bolt.diy
         cd /opt/bolt.diy

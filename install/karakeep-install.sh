@@ -37,7 +37,7 @@ msg_info "Installing Meilisearch"
 cd /tmp
 curl -fsSL "https://github.com/meilisearch/meilisearch/releases/latest/download/meilisearch.deb" -o "meilisearch.deb"
 $STD dpkg -i meilisearch.deb
-curl -fsSL "https://raw.githubusercontent.com/meilisearch/meilisearch/latest/config.toml" -o "/etc/meilisearch.toml"
+curl -fsSL "https://gh-proxy.com/raw.githubusercontent.commeilisearch/meilisearch/latest/config.toml" -o "/etc/meilisearch.toml"
 MASTER_KEY=$(openssl rand -base64 12)
 sed -i \
   -e 's|^env =.*|env = "production"|' \

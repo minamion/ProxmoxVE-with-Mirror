@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Michel Roegl-Brunner (michelroegl-brunner)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -32,7 +32,7 @@ function update_script() {
     msg_info "Updating ${APP} to v${RELEASE}"
     $STD omd stop monitoring
     $STD omd cp monitoring monitoringbackup
-curl -fsSL "https://download.checkmk.com/checkmk/${RELEASE}/check-mk-raw-${RELEASE}_0.bookworm_amd64.deb" -o "/opt/checkmk.deb"
+    curl -fsSL "https://download.checkmk.com/checkmk/${RELEASE}/check-mk-raw-${RELEASE}_0.bookworm_amd64.deb" -o "/opt/checkmk.deb"
     $STD apt-get install -y /opt/checkmk.deb
     $STD omd --force -V ${RELEASE}.cre update --conflict=install monitoring
     $STD omd start monitoring

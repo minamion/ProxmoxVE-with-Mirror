@@ -42,12 +42,12 @@ $STD pip install git+https://github.com/motioneye-project/motioneye.git@dev
 mkdir -p /etc/motioneye
 chown -R root:root /etc/motioneye
 chmod -R 777 /etc/motioneye
-curl -fsSL "https://raw.githubusercontent.com/motioneye-project/motioneye/dev/motioneye/extra/motioneye.conf.sample" -o "/etc/motioneye/motioneye.conf"
+curl -fsSL "https://gh-proxy.com/raw.githubusercontent.commotioneye-project/motioneye/dev/motioneye/extra/motioneye.conf.sample" -o "/etc/motioneye/motioneye.conf"
 mkdir -p /var/lib/motioneye
 msg_ok "Installed MotionEye"
 
 msg_info "Creating Service"
-curl -fsSL "https://raw.githubusercontent.com/motioneye-project/motioneye/dev/motioneye/extra/motioneye.systemd" -o "/etc/systemd/system/motioneye.service"
+curl -fsSL "https://gh-proxy.com/raw.githubusercontent.commotioneye-project/motioneye/dev/motioneye/extra/motioneye.systemd" -o "/etc/systemd/system/motioneye.service"
 systemctl enable -q --now motioneye
 msg_ok "Created Service"
 
