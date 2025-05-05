@@ -31,7 +31,7 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Installing Uptime Kuma"
-$STD git clone https://github.com/louislam/uptime-kuma.git
+$STD git clone https://proxy.seaslug.moe/github.com/louislam/uptime-kuma.git
 mv uptime-kuma /opt/uptime-kuma
 cd /opt/uptime-kuma
 $STD npm run setup

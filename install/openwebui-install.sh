@@ -39,7 +39,7 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Installing Open WebUI (Patience)"
-$STD git clone https://github.com/open-webui/open-webui.git /opt/open-webui
+$STD git clone https://proxy.seaslug.moe/github.com/open-webui/open-webui.git /opt/open-webui
 cd /opt/open-webui/backend
 $STD pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 $STD pip3 install -r requirements.txt -U

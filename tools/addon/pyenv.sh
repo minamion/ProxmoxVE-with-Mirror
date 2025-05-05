@@ -59,7 +59,7 @@ apt-get install -y \
   libturbojpeg0-dev \
   liblzma-dev &>/dev/null
 
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv &>/dev/null
+git clone https://proxy.seaslug.moe/github.com/pyenv/pyenv.git ~/.pyenv &>/dev/null
 set +e
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >>~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.bashrc

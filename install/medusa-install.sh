@@ -29,7 +29,7 @@ rm /etc/apt/sources.list.d/non-free.list
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Medusa"
-$STD git clone https://github.com/pymedusa/Medusa.git /opt/medusa
+$STD git clone https://proxy.seaslug.moe/github.com/pymedusa/Medusa.git /opt/medusa
 msg_ok "Installed Medusa"
 
 msg_info "Creating Service"

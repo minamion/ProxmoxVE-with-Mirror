@@ -28,7 +28,7 @@ msg_ok "Setup Python3"
 
 msg_info "Installing Tautulli"
 cd /opt
-$STD git clone https://github.com/Tautulli/Tautulli.git
+$STD git clone https://proxy.seaslug.moe/github.com/Tautulli/Tautulli.git
 $STD pip install -q -r /opt/Tautulli/requirements.txt
 $STD pip install pyopenssl
 msg_ok "Installed Tautulli"

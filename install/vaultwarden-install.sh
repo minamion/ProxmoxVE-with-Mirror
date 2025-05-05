@@ -37,7 +37,7 @@ rm rustup-init.sh
 msg_ok "Installed Rust"
 
 msg_info "Building Vaultwarden ${VAULT} (Patience)"
-$STD git clone https://github.com/dani-garcia/vaultwarden
+$STD git clone https://proxy.seaslug.moe/github.com/dani-garcia/vaultwarden
 cd vaultwarden
 $STD cargo build --features "sqlite,mysql,postgresql" --release
 msg_ok "Built Vaultwarden ${VAULT}"

@@ -31,7 +31,7 @@ function update_script() {
   exit
   msg_info "Updating ${APP}"
   systemctl stop ${APP}
-  git clone https://github.com/revenz/Fenrus.git
+  git clone https://proxy.seaslug.moe/github.com/revenz/Fenrus.git
   cd Fenrus
   gitVersionNumber=$(git rev-parse HEAD)
 

@@ -29,7 +29,7 @@ set -o pipefail
 msg_ok "Installed Golang"
 
 msg_info "Installing RTSPtoWeb"
-$STD git clone https://github.com/deepch/RTSPtoWeb /opt/rtsptoweb
+$STD git clone https://proxy.seaslug.moe/github.com/deepch/RTSPtoWeb /opt/rtsptoweb
 cat <<EOF >>/opt/rtsptoweb/start
 #!/bin/bash
 cd /opt/rtsptoweb && GO111MODULE=on go run *.go

@@ -56,7 +56,7 @@ $STD npm install -g yarn
 msg_ok "Installed Node.js"
 
 msg_info "Installing Tandoor (Patience)"
-$STD git clone https://github.com/TandoorRecipes/recipes -b master /opt/tandoor
+$STD git clone https://proxy.seaslug.moe/github.com/TandoorRecipes/recipes -b master /opt/tandoor
 mkdir -p /opt/tandoor/{config,api,mediafiles,staticfiles}
 $STD pip3 install -r /opt/tandoor/requirements.txt
 cd /opt/tandoor/vue

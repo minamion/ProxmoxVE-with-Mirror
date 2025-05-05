@@ -37,7 +37,7 @@ function update_script() {
     rm -rf metube_bak
   fi
   mv metube metube_bak
-  $STD git clone https://github.com/alexta69/metube /opt/metube
+  $STD git clone https://proxy.seaslug.moe/github.com/alexta69/metube /opt/metube
   cd /opt/metube/ui
   $STD npm install
   $STD node_modules/.bin/ng build

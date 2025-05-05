@@ -68,7 +68,7 @@ $STD sudo make install
 msg_ok "Installed OCR Dependencies"
 
 msg_info "Installing JBIG2"
-$STD git clone https://github.com/ie13/jbig2enc /opt/jbig2enc
+$STD git clone https://proxy.seaslug.moe/github.com/ie13/jbig2enc /opt/jbig2enc
 cd /opt/jbig2enc
 $STD bash ./autogen.sh
 $STD bash ./configure

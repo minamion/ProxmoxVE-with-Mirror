@@ -62,7 +62,7 @@ $STD apt-get -y install zulu17-jdk
 msg_ok "Installed Azul Zulu"
 
 msg_info "Installing JBIG2"
-$STD git clone https://github.com/agl/jbig2enc /opt/jbig2enc
+$STD git clone https://proxy.seaslug.moe/github.com/agl/jbig2enc /opt/jbig2enc
 cd /opt/jbig2enc
 $STD bash ./autogen.sh
 $STD bash ./configure

@@ -49,7 +49,7 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Installing MeTube"
-$STD git clone https://github.com/alexta69/metube /opt/metube
+$STD git clone https://proxy.seaslug.moe/github.com/alexta69/metube /opt/metube
 cd /opt/metube/ui
 $STD npm install
 $STD node_modules/.bin/ng build
