@@ -207,7 +207,7 @@ fi
 EOF
     chmod +x /usr/local/bin/apt-proxy-detect.sh
   fi
-  $STD sudo sed -i "s|http://deb.debian.org/debian|http://mirror.sjtu.edu.cn/debian|g" /etc/apt/sources.list
+  $STD sed -i "s|http://deb.debian.org/debian|http://mirror.sjtu.edu.cn/debian|g" /etc/apt/sources.list
   $STD apt-get update
   $STD apt-get -o Dpkg::Options::="--force-confold" -y dist-upgrade
   rm -rf /usr/lib/python3.*/EXTERNALLY-MANAGED
