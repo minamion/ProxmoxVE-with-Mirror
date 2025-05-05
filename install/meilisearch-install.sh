@@ -23,7 +23,7 @@ tmp_file=$(mktemp)
 RELEASE=$(curl -s https://api.github.com/repos/meilisearch/meilisearch/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL https://github.com/meilisearch/meilisearch/releases/latest/download/meilisearch.deb -o $tmp_file
 $STD dpkg -i $tmp_file
-curl -fsSL https://gh-proxy.com/raw.githubusercontent.commeilisearch/meilisearch/latest/config.toml -o /etc/meilisearch.toml
+curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.commeilisearch/meilisearch/latest/config.toml -o /etc/meilisearch.toml
 MASTER_KEY=$(openssl rand -base64 12)
 LOCAL_IP="$(hostname -I | awk '{print $1}')"
 sed -i \

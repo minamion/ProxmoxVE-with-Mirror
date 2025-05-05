@@ -62,7 +62,7 @@ $STD pip3 install -r /opt/tandoor/requirements.txt
 cd /opt/tandoor/vue
 $STD yarn install
 $STD yarn build
-curl -fsSL "https://gh-proxy.com/raw.githubusercontent.comTandoorRecipes/recipes/develop/.env.template" -o "/opt/tandoor/.env"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.comTandoorRecipes/recipes/develop/.env.template" -o "/opt/tandoor/.env"
 DB_NAME=db_recipes
 DB_USER=tandoor
 DB_ENCODING=utf8

@@ -33,7 +33,7 @@ $STD npm install -g yarn
 msg_ok "Setup Node.js & yarn"
 
 msg_info "Setup Platformio"
-curl -fsSL -o get-platformio.py https://gh-proxy.com/raw.githubusercontent.complatformio/platformio-core-installer/master/get-platformio.py
+curl -fsSL -o get-platformio.py https://proxy.seaslug.moe/raw.githubusercontent.complatformio/platformio-core-installer/master/get-platformio.py
 $STD python3 get-platformio.py
 msg_ok "Setup Platformio"
 

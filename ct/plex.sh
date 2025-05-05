@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/build.func)
+source <(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -40,7 +40,7 @@ function update_script() {
   fi
   if [ "$UPD" == "2" ]; then
     set +e
-    bash -c "$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.commrworf/plexupdate/master/extras/installer.sh)"
+    bash -c "$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.commrworf/plexupdate/master/extras/installer.sh)"
     exit
   fi
 }

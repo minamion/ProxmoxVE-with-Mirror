@@ -32,7 +32,7 @@ $STD npm install -g flowise \
   @opentelemetry/sdk-trace-node \
   langchainhub
 mkdir -p /opt/flowiseai
-curl -fsSL "https://gh-proxy.com/raw.githubusercontent.comFlowiseAI/Flowise/main/packages/server/.env.example" -o "/opt/flowiseai/.env"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.comFlowiseAI/Flowise/main/packages/server/.env.example" -o "/opt/flowiseai/.env"
 msg_ok "Installed FlowiseAI"
 
 msg_info "Creating Service"

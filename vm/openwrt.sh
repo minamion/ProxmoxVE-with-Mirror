@@ -7,7 +7,7 @@
 # https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Based on work from https://i12bretro.github.io/tutorials/0405.html
 
-source /dev/stdin <<<$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
+source /dev/stdin <<<$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
 
 function header_info {
   clear
@@ -492,7 +492,7 @@ qm set $VMID \
   -scsi0 ${DISK1_REF},size=512M \
   -boot order=scsi0 \
   -tags community-script \
-  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png'/></a>
+  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png'/></a>
 
   # OpenWRT
 

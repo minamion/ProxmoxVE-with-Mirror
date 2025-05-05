@@ -18,7 +18,7 @@ $STD apt-get install -y gnupg
 msg_ok "Installed Dependencies"
 
 msg_info "Setting up Zerotier-One"
-curl -fsSL 'https://gh-proxy.com/raw.githubusercontent.comzerotier/ZeroTierOne/main/doc/contact%40zerotier.com.gpg' | gpg --import &&
+curl -fsSL 'https://proxy.seaslug.moe/raw.githubusercontent.comzerotier/ZeroTierOne/main/doc/contact%40zerotier.com.gpg' | gpg --import &&
   if z="$(curl -fsSL 'https://install.zerotier.com/' | gpg)"; then
     echo "$z" | sudo bash
   fi

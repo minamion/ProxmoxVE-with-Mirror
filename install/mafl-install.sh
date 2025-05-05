@@ -39,7 +39,7 @@ msg_info "Installing Mafl v${RELEASE}"
 curl -fsSL "https://github.com/hywax/mafl/archive/refs/tags/v${RELEASE}.tar.gz" -o $(basename "https://github.com/hywax/mafl/archive/refs/tags/v${RELEASE}.tar.gz")
 tar -xzf v${RELEASE}.tar.gz
 mkdir -p /opt/mafl/data
-curl -fsSL "https://gh-proxy.com/raw.githubusercontent.comhywax/mafl/main/.example/config.yml" -o "/opt/mafl/data/config.yml"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.comhywax/mafl/main/.example/config.yml" -o "/opt/mafl/data/config.yml"
 mv mafl-${RELEASE}/* /opt/mafl
 rm -rf mafl-${RELEASE}
 cd /opt/mafl

@@ -14,7 +14,7 @@ network_check
 update_os
 
 msg_info "Installing NextCloudPi (Patience)"
-bash <(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comnextcloud/nextcloudpi/master/install.sh) >/dev/null 2>&1
+bash <(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.comnextcloud/nextcloudpi/master/install.sh) >/dev/null 2>&1
 msg_ok "Installed NextCloudPi"
 
 motd_ssh

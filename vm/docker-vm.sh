@@ -4,7 +4,7 @@
 # Author: thost96 (thost96)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 
-source /dev/stdin <<<$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
+source /dev/stdin <<<$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
 
 function header_info {
   clear
@@ -445,7 +445,7 @@ DESCRIPTION=$(
   cat <<EOF
 <div align='center'>
   <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
-    <img src='https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
+    <img src='https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
   </a>
 
   <h2 style='font-size: 24px; margin: 20px 0;'>Docker VM</h2>

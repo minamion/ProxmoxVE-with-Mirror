@@ -5,7 +5,7 @@
 # License: MIT
 # https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 
-source /dev/stdin <<<$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
+source /dev/stdin <<<$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
 
 function header_info {
   cat <<"EOF"
@@ -35,9 +35,9 @@ DISK_SIZE="32G"
 GEN_MAC=$(echo '00 60 2f'$(od -An -N3 -t xC /dev/urandom) | sed -e 's/ /:/g' | tr '[:lower:]' '[:upper:]')
 USEDID=$(pvesh get /cluster/resources --type vm --output-format yaml | egrep -i 'vmid' | awk '{print substr($2, 1, length($2)-0) }')
 NEXTID=$(pvesh get /cluster/nextid)
-STABLE=$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comhome-assistant/version/master/stable.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
-BETA=$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comhome-assistant/version/master/beta.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
-DEV=$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.comhome-assistant/version/master/dev.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+STABLE=$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.comhome-assistant/version/master/stable.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+BETA=$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.comhome-assistant/version/master/beta.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+DEV=$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.comhome-assistant/version/master/dev.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
 YW=$(echo "\033[33m")
 BL=$(echo "\033[36m")
 HA=$(echo "\033[1;34m")
@@ -326,7 +326,7 @@ qm set $VMID \
   -scsi0 ${DISK1_REF},size=32G >/dev/null
 qm set $VMID \
   -boot order=scsi0 \
-  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png'/></a>
+  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/images/logo-81x112.png'/></a>
 
   # Home Assistant OS
 

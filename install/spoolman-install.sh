@@ -39,7 +39,7 @@ unzip -q spoolman.zip -d spoolman
 rm -rf spoolman.zip
 cd spoolman
 $STD pip3 install -r requirements.txt
-curl -fsSL "https://gh-proxy.com/raw.githubusercontent.comDonkie/Spoolman/master/.env.example" -o ".env"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.comDonkie/Spoolman/master/.env.example" -o ".env"
 echo "${RELEASE}" >/opt/${APPLICATION}_version.txt
 msg_ok "Installed Spoolman"
 
