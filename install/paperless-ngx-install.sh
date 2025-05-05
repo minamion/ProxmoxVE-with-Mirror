@@ -59,7 +59,7 @@ $STD apt-get install -y \
   tesseract-ocr-eng
 
 cd /tmp
-curl -fsSL "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz" -o $(basename "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz")
+curl -fsSL "https://proxy.seaslug.moe/github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz" -o $(basename "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz")
 $STD tar -xzf ghostscript-10.04.0.tar.gz
 cd ghostscript-10.04.0
 $STD ./configure
@@ -78,9 +78,9 @@ rm -rf /opt/jbig2enc
 msg_ok "Installed JBIG2"
 
 msg_info "Installing Paperless-ngx (Patience)"
-Paperlessngx=$(curl -fsSL "https://github.com/paperless-ngx/paperless-ngx/releases/latest" | grep "title>Release" | cut -d " " -f 5)
+Paperlessngx=$(curl -fsSL "https://proxy.seaslug.moe/github.com/paperless-ngx/paperless-ngx/releases/latest" | grep "title>Release" | cut -d " " -f 5)
 cd /opt
-$STD curl -fsSL "https://github.com/paperless-ngx/paperless-ngx/releases/download/$Paperlessngx/paperless-ngx-$Paperlessngx.tar.xz" -o "paperless-ngx-$Paperlessngx.tar.xz"
+$STD curl -fsSL "https://proxy.seaslug.moe/github.com/paperless-ngx/paperless-ngx/releases/download/$Paperlessngx/paperless-ngx-$Paperlessngx.tar.xz" -o "paperless-ngx-$Paperlessngx.tar.xz"
 $STD tar -xf "paperless-ngx-$Paperlessngx.tar.xz" -C /opt/
 mv paperless-ngx paperless
 rm "paperless-ngx-$Paperlessngx.tar.xz"

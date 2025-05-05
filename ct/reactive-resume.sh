@@ -38,7 +38,7 @@ function update_script() {
         cp /opt/${APP}/.env /opt/rxresume.env
         res_tmp=$(mktemp)
         rm -rf /opt/${APP}
-        curl -fsSL "https://github.com/AmruthPillai/Reactive-Resume/archive/refs/tags/v${RELEASE}.zip" -O $res_tmp
+        curl -fsSL "https://proxy.seaslug.moe/github.com/AmruthPillai/Reactive-Resume/archive/refs/tags/v${RELEASE}.zip" -O $res_tmp
         unzip -q $res_tmp
         mv ${APP}-${RELEASE}/ /opt/${APP}
         cd /opt/${APP}

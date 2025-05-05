@@ -36,7 +36,7 @@ function update_script() {
 
         msg_info "Updating ${APP} to ${RELEASE}"
         temp_file=$(mktemp)
-        curl -fsSL "https://github.com/jordan-dalby/ByteStash/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+        curl -fsSL "https://proxy.seaslug.moe/github.com/jordan-dalby/ByteStash/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
         tar zxf $temp_file
         rm -rf /opt/bytestash/server/node_modules
         rm -rf /opt/bytestash/client/node_modules

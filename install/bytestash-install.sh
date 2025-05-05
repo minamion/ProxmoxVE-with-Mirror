@@ -33,7 +33,7 @@ msg_info "Installing ByteStash"
 JWT_SECRET=$(openssl rand -base64 32 | tr -d '/+=')
 temp_file=$(mktemp)
 RELEASE=$(curl -fsSL https://api.github.com/repos/jordan-dalby/ByteStash/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-curl -fsSL "https://github.com/jordan-dalby/ByteStash/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+curl -fsSL "https://proxy.seaslug.moe/github.com/jordan-dalby/ByteStash/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
 tar zxf $temp_file
 mv ByteStash-${RELEASE} /opt/bytestash
 cd /opt/bytestash/server

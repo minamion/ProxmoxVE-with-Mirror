@@ -18,11 +18,11 @@ msg_info "Setup RustDesk"
 RELEASE=$(curl -fsSL https://api.github.com/repos/rustdesk/rustdesk-server/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
 TEMPDIR=$(mktemp -d)
 
-curl -fsSL "https://github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-hbbr_${RELEASE}_amd64.deb" \
+curl -fsSL "https://proxy.seaslug.moe/github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-hbbr_${RELEASE}_amd64.deb" \
     -o "${TEMPDIR}/rustdesk-server-hbbr_${RELEASE}_amd64.deb"
-curl -fsSL "https://github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-hbbs_${RELEASE}_amd64.deb" \
+curl -fsSL "https://proxy.seaslug.moe/github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-hbbs_${RELEASE}_amd64.deb" \
     -o "${TEMPDIR}/rustdesk-server-hbbs_${RELEASE}_amd64.deb"
-curl -fsSL "https://github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-utils_${RELEASE}_amd64.deb" \
+curl -fsSL "https://proxy.seaslug.moe/github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-utils_${RELEASE}_amd64.deb" \
     -o "${TEMPDIR}/rustdesk-server-utils_${RELEASE}_amd64.deb"
 $STD dpkg -i "${TEMPDIR}"/*.deb
 echo "${RELEASE}" >/opt/rustdesk_version.txt

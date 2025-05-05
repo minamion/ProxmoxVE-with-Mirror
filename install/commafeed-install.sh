@@ -28,7 +28,7 @@ msg_ok "Installed Azul Zulu"
 RELEASE=$(curl -fsSL https://api.github.com/repos/Athou/commafeed/releases/latest | grep '"tag_name":' | cut -d'"' -f4)
 msg_info "Installing CommaFeed ${RELEASE}"
 mkdir /opt/commafeed
-curl -fsSL "https://github.com/Athou/commafeed/releases/download/${RELEASE}/commafeed-${RELEASE}-h2-jvm.zip" -o $(basename "https://github.com/Athou/commafeed/releases/download/${RELEASE}/commafeed-${RELEASE}-h2-jvm.zip")
+curl -fsSL "https://proxy.seaslug.moe/github.com/Athou/commafeed/releases/download/${RELEASE}/commafeed-${RELEASE}-h2-jvm.zip" -o $(basename "https://github.com/Athou/commafeed/releases/download/${RELEASE}/commafeed-${RELEASE}-h2-jvm.zip")
 unzip -q commafeed-${RELEASE}-h2-jvm.zip
 mv commafeed-${RELEASE}-h2/* /opt/commafeed/
 echo "${RELEASE}" >/opt/${APPLICATION}_version.txt

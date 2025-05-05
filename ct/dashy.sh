@@ -46,7 +46,7 @@ function update_script() {
     msg_info "Updating ${APP} to ${RELEASE}"
     rm -rf /opt/dashy
     mkdir -p /opt/dashy
-    curl -fsSL "https://github.com/Lissy93/dashy/archive/refs/tags/${RELEASE}.tar.gz" | tar -xz -C /opt/dashy --strip-components=1
+    curl -fsSL "https://proxy.seaslug.moe/github.com/Lissy93/dashy/archive/refs/tags/${RELEASE}.tar.gz" | tar -xz -C /opt/dashy --strip-components=1
     cd /opt/dashy
     npm install
     npm run build

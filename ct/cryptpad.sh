@@ -37,7 +37,7 @@ function update_script() {
         msg_info "Updating $APP to ${RELEASE}"
         temp_dir=$(mktemp -d)
         cp -f /opt/cryptpad/config/config.js /opt/config.js
-        curl -fsSL "https://github.com/cryptpad/cryptpad/archive/refs/tags/${RELEASE}.tar.gz" -o "$temp_dir/cryptpad-${RELEASE}.tar.gz"
+        curl -fsSL "https://proxy.seaslug.moe/github.com/cryptpad/cryptpad/archive/refs/tags/${RELEASE}.tar.gz" -o "$temp_dir/cryptpad-${RELEASE}.tar.gz"
         cd "$temp_dir"
         tar zxf "cryptpad-${RELEASE}.tar.gz"
         cp -rf "cryptpad-${RELEASE}"/* /opt/cryptpad

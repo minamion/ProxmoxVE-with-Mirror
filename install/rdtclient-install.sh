@@ -22,7 +22,7 @@ $STD apt-get install -y dotnet-sdk-9.0
 msg_ok "Installed ASP.NET Core Runtime"
 
 msg_info "Installing rdtclient"
-curl -fsSL "https://github.com/rogerfar/rdt-client/releases/latest/download/RealDebridClient.zip" -o $(basename "https://github.com/rogerfar/rdt-client/releases/latest/download/RealDebridClient.zip")
+curl -fsSL "https://proxy.seaslug.moe/github.com/rogerfar/rdt-client/releases/latest/download/RealDebridClient.zip" -o $(basename "https://github.com/rogerfar/rdt-client/releases/latest/download/RealDebridClient.zip")
 unzip -qq RealDebridClient.zip -d /opt/rdtc
 rm RealDebridClient.zip
 cd /opt/rdtc

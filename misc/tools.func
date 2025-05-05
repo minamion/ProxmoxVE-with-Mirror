@@ -658,8 +658,8 @@ setup_local_ip_helper() {
 
     # Install networkd-dispatcher if not present
     if ! dpkg -s networkd-dispatcher >/dev/null 2>&1; then
-      $STD apt-get update -qq
-      $STD apt-get install -yq networkd-dispatcher
+        $STD apt-get update -qq
+        $STD apt-get install -yq networkd-dispatcher
     fi
 
     # Write update_local_ip.sh
@@ -800,7 +800,7 @@ function setup_uv() {
     fi
 
     # install or update uv
-    curl -fsSL "https://github.com/astral-sh/uv/releases/latest/download/${UV_TAR}" -o "$TMP_DIR/uv.tar.gz"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/astral-sh/uv/releases/latest/download/${UV_TAR}" -o "$TMP_DIR/uv.tar.gz"
     tar -xzf "$TMP_DIR/uv.tar.gz" -C "$TMP_DIR"
     install -m 755 "$TMP_DIR"/*/uv "$UV_BIN"
     rm -rf "$TMP_DIR"

@@ -38,7 +38,7 @@ msg_info "Installing ErsatzTV"
 temp_file=$(mktemp)
 cd /opt
 RELEASE=$(curl -fsSL https://api.github.com/repos/ErsatzTV/ErsatzTV/releases | grep -oP '"tag_name": "\K[^"]+' | head -n 1)
-curl -fsSL "https://github.com/ErsatzTV/ErsatzTV/releases/download/${RELEASE}/ErsatzTV-${RELEASE}-linux-x64.tar.gz" -o "$temp_file"
+curl -fsSL "https://proxy.seaslug.moe/github.com/ErsatzTV/ErsatzTV/releases/download/${RELEASE}/ErsatzTV-${RELEASE}-linux-x64.tar.gz" -o "$temp_file"
 tar -xzf "$temp_file"
 mv /opt/ErsatzTV-${RELEASE}-linux-x64 /opt/ErsatzTV
 echo "${RELEASE}" >"/opt/${APPLICATION}_version.txt"

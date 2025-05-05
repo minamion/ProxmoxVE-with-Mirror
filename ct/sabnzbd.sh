@@ -38,7 +38,7 @@ function update_script() {
     systemctl stop sabnzbd
     cp -r /opt/sabnzbd /opt/sabnzbd_backup_$(date +%s)
     temp_file=$(mktemp)
-    curl -fsSL "https://github.com/sabnzbd/sabnzbd/releases/download/${RELEASE}/SABnzbd-${RELEASE}-src.tar.gz" -o "$temp_file"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/sabnzbd/sabnzbd/releases/download/${RELEASE}/SABnzbd-${RELEASE}-src.tar.gz" -o "$temp_file"
     tar -xzf "$temp_file" -C /opt/sabnzbd --strip-components=1
     rm -f "$temp_file"
     if [[ ! -d /opt/sabnzbd/venv ]]; then

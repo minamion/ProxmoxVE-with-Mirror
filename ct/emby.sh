@@ -33,7 +33,7 @@ function update_script() {
   msg_ok "Stopped ${APP}"
 
   msg_info "Updating ${APP}"
-  $STD curl -fsSL "https://github.com/MediaBrowser/Emby.Releases/releases/download/${LATEST}/emby-server-deb_${LATEST}_amd64.deb" -o "emby-server-deb_${LATEST}_amd64.deb"
+  $STD curl -fsSL "https://proxy.seaslug.moe/github.com/MediaBrowser/Emby.Releases/releases/download/${LATEST}/emby-server-deb_${LATEST}_amd64.deb" -o "emby-server-deb_${LATEST}_amd64.deb"
   $STD dpkg -i "emby-server-deb_${LATEST}_amd64.deb"
   rm "emby-server-deb_${LATEST}_amd64.deb"
   msg_ok "Updated ${APP}"

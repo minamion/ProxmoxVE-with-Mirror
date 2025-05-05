@@ -27,15 +27,15 @@ $STD apt-get install -y \
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Additional Tools"
-curl -fsSL "https://github.com/Y2Z/monolith/releases/latest/download/monolith-gnu-linux-x86_64" -o "/usr/bin/monolith"
+curl -fsSL "https://proxy.seaslug.moe/github.com/Y2Z/monolith/releases/latest/download/monolith-gnu-linux-x86_64" -o "/usr/bin/monolith"
 chmod +x /usr/bin/monolith
-curl -fsSL "https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp_linux" -o "/usr/bin/yt-dlp"
+curl -fsSL "https://proxy.seaslug.moe/github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp_linux" -o "/usr/bin/yt-dlp"
 chmod +x /usr/bin/yt-dlp
 msg_ok "Installed Additional Tools"
 
 msg_info "Installing Meilisearch"
 cd /tmp
-curl -fsSL "https://github.com/meilisearch/meilisearch/releases/latest/download/meilisearch.deb" -o "meilisearch.deb"
+curl -fsSL "https://proxy.seaslug.moe/github.com/meilisearch/meilisearch/releases/latest/download/meilisearch.deb" -o "meilisearch.deb"
 $STD dpkg -i meilisearch.deb
 curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.commeilisearch/meilisearch/latest/config.toml" -o "/etc/meilisearch.toml"
 MASTER_KEY=$(openssl rand -base64 12)
@@ -61,7 +61,7 @@ msg_ok "Installed Node.js"
 msg_info "Installing karakeep"
 cd /opt
 RELEASE=$(curl -fsSL https://api.github.com/repos/karakeep-app/karakeep/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-curl -fsSL "https://github.com/karakeep-app/karakeep/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
+curl -fsSL "https://proxy.seaslug.moe/github.com/karakeep-app/karakeep/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
 unzip -q "v${RELEASE}.zip"
 mv karakeep-"${RELEASE}" /opt/karakeep
 cd /opt/karakeep

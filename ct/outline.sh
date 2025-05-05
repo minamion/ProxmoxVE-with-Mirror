@@ -37,7 +37,7 @@ function update_script() {
     temp_file=$(mktemp)
     cp /opt/outline/.env /opt
     rm -rf /opt/outline
-    curl -fsSL "https://github.com/outline/outline/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/outline/outline/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
     tar zxf "$temp_file"
     mv outline-"${RELEASE}" /opt/outline
     cd /opt/outline

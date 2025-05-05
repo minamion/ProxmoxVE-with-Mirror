@@ -46,7 +46,7 @@ function update_script() {
       mv /opt/hoarder/.env /etc/hoarder/hoarder.env
     fi
     rm -rf /opt/hoarder
-    curl -fsSL "https://github.com/hoarder-app/hoarder/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/hoarder-app/hoarder/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
     unzip -q v"${RELEASE}".zip
     mv karakeep-"${RELEASE}" /opt/hoarder
     cd /opt/hoarder/apps/web

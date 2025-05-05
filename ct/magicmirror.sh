@@ -45,7 +45,7 @@ function update_script() {
     fi
     cp -r /opt/magicmirror/modules /opt/magicmirror-backup
     temp_file=$(mktemp)
-    curl -fsSL "https://github.com/MagicMirrorOrg/MagicMirror/archive/refs/tags/v${RELEASE}.tar.gz" -o ""$temp_file""
+    curl -fsSL "https://proxy.seaslug.moe/github.com/MagicMirrorOrg/MagicMirror/archive/refs/tags/v${RELEASE}.tar.gz" -o ""$temp_file""
     tar -xzf "$temp_file"
     rm -rf /opt/magicmirror
     mv MagicMirror-${RELEASE} /opt/magicmirror

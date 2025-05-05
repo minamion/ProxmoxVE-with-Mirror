@@ -33,7 +33,7 @@ function update_script() {
   temp_file="$(mktemp)"
   rm -rf /opt/Lidarr
   RELEASE=$(curl -fsSL https://api.github.com/repos/Lidarr/Lidarr/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-  curl -fsSL "https://github.com/Lidarr/Lidarr/releases/download/v${RELEASE}/Lidarr.master.${RELEASE}.linux-core-x64.tar.gz" -o "$temp_file"
+  curl -fsSL "https://proxy.seaslug.moe/github.com/Lidarr/Lidarr/releases/download/v${RELEASE}/Lidarr.master.${RELEASE}.linux-core-x64.tar.gz" -o "$temp_file"
   $STD tar -xvzf "$temp_file"
   mv Lidarr /opt
   chmod 775 /opt/Lidarr

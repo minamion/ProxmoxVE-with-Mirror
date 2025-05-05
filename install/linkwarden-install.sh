@@ -39,7 +39,7 @@ msg_ok "Installed Node.js/Yarn"
 msg_info "Installing Rust"
 curl -fsSL https://sh.rustup.rs -o rustup-init.sh
 $STD bash rustup-init.sh -y --profile minimal
-echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >>~/.bashrc
 export PATH="$HOME/.cargo/bin:$PATH"
 rm rustup-init.sh
 $STD cargo install monolith
@@ -92,7 +92,7 @@ fi
 msg_info "Installing Linkwarden (Patience)"
 cd /opt
 RELEASE=$(curl -fsSL https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-curl -fsSL "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip" -o $(basename "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip")
+curl -fsSL "https://proxy.seaslug.moe/github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip" -o $(basename "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip")
 unzip -q ${RELEASE}.zip
 mv linkwarden-${RELEASE:1} /opt/linkwarden
 cd /opt/linkwarden

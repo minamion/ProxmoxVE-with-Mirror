@@ -48,7 +48,7 @@ RELEASE=$(curl -fsSL https://api.github.com/repos/paymenter/paymenter/releases/l
 echo "${RELEASE}" >/opt/"${APPLICATION}"_version.txt
 mkdir -p /opt/paymenter
 cd /opt/paymenter
-curl -fsSL "https://github.com/paymenter/paymenter/releases/download/${RELEASE}/paymenter.tar.gz" -o paymenter.tar.gz
+curl -fsSL "https://proxy.seaslug.moe/github.com/paymenter/paymenter/releases/download/${RELEASE}/paymenter.tar.gz" -o paymenter.tar.gz
 $STD tar -xzvf paymenter.tar.gz
 chmod -R 755 storage/* bootstrap/cache/
 msg_ok "Installed Paymenter"

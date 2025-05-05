@@ -48,7 +48,7 @@ CHROME_TOKEN=$(openssl rand -hex 32)
 LOCAL_IP=$(hostname -I | awk '{print $1}')
 TAG=$(curl -fsSL https://api.github.com/repos/browserless/browserless/tags?per_page=1 | grep "name" | awk '{print substr($2, 3, length($2)-4) }')
 RELEASE=$(curl -fsSL https://api.github.com/repos/AmruthPillai/Reactive-Resume/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-curl -fsSL "https://github.com/AmruthPillai/Reactive-Resume/archive/refs/tags/v${RELEASE}.zip" -o v${RELEASE}.zip
+curl -fsSL "https://proxy.seaslug.moe/github.com/AmruthPillai/Reactive-Resume/archive/refs/tags/v${RELEASE}.zip" -o v${RELEASE}.zip
 unzip -q v${RELEASE}.zip
 mv ${APPLICATION}-${RELEASE}/ /opt/${APPLICATION}
 cd /opt/${APPLICATION}

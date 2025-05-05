@@ -57,7 +57,7 @@ if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
     tmp_dir=$(mktemp -d)
     mkdir -p /opt/meilisearch-ui
     RELEASE_UI=$(curl -s https://api.github.com/repos/riccox/meilisearch-ui/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-    curl -fsSL "https://github.com/riccox/meilisearch-ui/archive/refs/tags/${RELEASE_UI}.zip" -o $tmp_file
+    curl -fsSL "https://proxy.seaslug.moe/github.com/riccox/meilisearch-ui/archive/refs/tags/${RELEASE_UI}.zip" -o $tmp_file
     unzip -q "$tmp_file" -d "$tmp_dir"
     mv "$tmp_dir"/*/* /opt/meilisearch-ui/
     cd /opt/meilisearch-ui

@@ -37,7 +37,7 @@ function update_script() {
     rm -rf homebox_bak
     rm -rf /tmp/homebox.tar.gz
     mv homebox homebox_bak
-    curl -fsSL "https://github.com/sysadminsmedia/homebox/releases/download/${RELEASE}/homebox_Linux_x86_64.tar.gz" -o "/tmp/homebox.tar.gz"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/sysadminsmedia/homebox/releases/download/${RELEASE}/homebox_Linux_x86_64.tar.gz" -o "/tmp/homebox.tar.gz"
     tar -xzf /tmp/homebox.tar.gz -C /opt
     chmod +x /opt/homebox
     echo "${RELEASE}" >/opt/${APP}_version.txt

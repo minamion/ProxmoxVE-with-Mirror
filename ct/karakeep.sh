@@ -49,7 +49,7 @@ function update_script() {
       mv /opt/karakeep/.env /etc/karakeep/karakeep.env
     fi
     rm -rf /opt/karakeep
-    curl -fsSL "https://github.com/karakeep-app/karakeep/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/karakeep-app/karakeep/archive/refs/tags/v${RELEASE}.zip" -o "v${RELEASE}.zip"
     unzip -q "v${RELEASE}.zip"
     mv karakeep-"${RELEASE}" /opt/karakeep
     cd /opt/karakeep/apps/web

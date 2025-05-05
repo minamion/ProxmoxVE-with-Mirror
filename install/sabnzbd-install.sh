@@ -37,7 +37,7 @@ RELEASE=$(curl -fsSL https://api.github.com/repos/sabnzbd/sabnzbd/releases/lates
 mkdir -p /opt/sabnzbd
 $STD uv venv /opt/sabnzbd/venv
 temp_file=$(mktemp)
-curl -fsSL "https://github.com/sabnzbd/sabnzbd/releases/download/${RELEASE}/SABnzbd-${RELEASE}-src.tar.gz" -o "$temp_file"
+curl -fsSL "https://proxy.seaslug.moe/github.com/sabnzbd/sabnzbd/releases/download/${RELEASE}/SABnzbd-${RELEASE}-src.tar.gz" -o "$temp_file"
 tar -xzf "$temp_file" -C /opt/sabnzbd --strip-components=1
 $STD uv pip install -r /opt/sabnzbd/requirements.txt --python=/opt/sabnzbd/venv/bin/python
 echo "${RELEASE}" >/opt/${APPLICATION}_version.txt

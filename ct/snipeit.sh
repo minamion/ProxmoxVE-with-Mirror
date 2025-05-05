@@ -38,7 +38,7 @@ function update_script() {
     $STD apt-get -y upgrade
     mv /opt/snipe-it /opt/snipe-it-backup
     temp_file=$(mktemp)
-    curl -fsSL "https://github.com/snipe/snipe-it/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+    curl -fsSL "https://proxy.seaslug.moe/github.com/snipe/snipe-it/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
     tar zxf "$temp_file"
     mv "snipe-it-${RELEASE}" /opt/snipe-it
     cp /opt/snipe-it-backup/.env /opt/snipe-it/.env

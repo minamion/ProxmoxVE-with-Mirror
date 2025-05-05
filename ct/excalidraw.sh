@@ -38,7 +38,7 @@ function update_script() {
         msg_info "Updating $APP to v${RELEASE}"
         cd /tmp
         temp_file=$(mktemp)
-        curl -fsSL "https://github.com/excalidraw/excalidraw/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
+        curl -fsSL "https://proxy.seaslug.moe/github.com/excalidraw/excalidraw/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
         tar xzf $temp_file
         rm -rf /opt/excalidraw
         mv excalidraw-${RELEASE} /opt/excalidraw

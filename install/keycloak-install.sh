@@ -27,7 +27,7 @@ msg_ok "Installed OpenJDK"
 msg_info "Installing Keycloak"
 temp_file=$(mktemp)
 RELEASE=$(curl -fsSL https://api.github.com/repos/keycloak/keycloak/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-curl -fsSL "https://github.com/keycloak/keycloak/releases/download/$RELEASE/keycloak-$RELEASE.tar.gz" -o "$temp_file"
+curl -fsSL "https://proxy.seaslug.moe/github.com/keycloak/keycloak/releases/download/$RELEASE/keycloak-$RELEASE.tar.gz" -o "$temp_file"
 tar xzf $temp_file
 mv keycloak-$RELEASE /opt/keycloak
 msg_ok "Installed Keycloak"

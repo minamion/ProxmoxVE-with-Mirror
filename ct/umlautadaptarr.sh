@@ -35,7 +35,7 @@ function update_script() {
 
         msg_info "Updating ${APP}"
         temp_file=$(mktemp)
-        curl -fsSL "https://github.com/PCJones/Umlautadaptarr/releases/download/${RELEASE}/linux-x64.zip" -o $temp_file
+        curl -fsSL "https://proxy.seaslug.moe/github.com/PCJones/Umlautadaptarr/releases/download/${RELEASE}/linux-x64.zip" -o $temp_file
         $STD unzip -u $temp_file '*/**' -d /opt/UmlautAdaptarr
         msg_ok "Updated ${APP}"
 
