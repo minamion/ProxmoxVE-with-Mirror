@@ -195,6 +195,6 @@ customize() {
     msg_ok "Customized Container"
   fi
 
-  echo "bash -c \"\$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror//main/ct/${app}.sh)\"" >/usr/bin/update
+  echo "bash -c \"\$(curl -fsSL https://gh-proxy.com/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/ct/${app}.sh)\"" >/usr/bin/update
   chmod +x /usr/bin/update
 }
