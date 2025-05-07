@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Execute within the Proxmox shell
 # bash -c "$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/tools/pve/hw-acceleration.sh)"
 

@@ -2,7 +2,7 @@
 source <(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts
 # Author: CrazyWolf13
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Source: https://gitlab.com/crafty-controller/crafty-4
 
 APP="Crafty-Controller"

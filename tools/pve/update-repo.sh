@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: MickLesk
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 
 function header_info {
   clear

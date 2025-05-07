@@ -4,7 +4,7 @@
 # Author: tteck (tteckster)
 #         Jon Spriggs (jontheniceguy)
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Based on work from https://i12bretro.github.io/tutorials/0405.html
 
 source /dev/stdin <<<$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)

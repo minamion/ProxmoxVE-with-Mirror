@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -s https://proxy.seaslug.moe/raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -s https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Source: https://transmissionbt.com/
 
 APP="Alpine-Transmission"
@@ -20,6 +20,7 @@ color
 catch_errors
 
 function update_script() {
+  $STD sed -i 's/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g' /etc/apk/repositories
   msg_info "Updating Alpine Packages"
   $STD apk -U upgrade
   msg_ok "Updated Alpine Packages"

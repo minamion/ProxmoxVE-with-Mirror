@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: michelroegl-brunner
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Source: https://github.com/opf/openproject
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -22,7 +22,7 @@ msg_ok "Installed Dependencies"
 
 msg_info "Setting up OpenProject Repository"
 curl -fsSL "https://dl.packager.io/srv/opf/openproject/key" | gpg --dearmor >/etc/apt/trusted.gpg.d/packager-io.gpg
-curl -fsSL  "https://dl.packager.io/srv/opf/openproject/stable/15/installer/debian/12.repo" -o "/etc/apt/sources.list.d/openproject.list"
+curl -fsSL "https://dl.packager.io/srv/opf/openproject/stable/15/installer/debian/12.repo" -o "/etc/apt/sources.list.d/openproject.list"
 msg_ok "Setup OpenProject Repository"
 
 msg_info "Setting up PostgreSQL Repository"

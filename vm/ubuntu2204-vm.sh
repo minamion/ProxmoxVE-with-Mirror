@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 
 source /dev/stdin <<<$(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/api.func)
 
@@ -497,11 +497,11 @@ DESCRIPTION=$(
   </span>
   <span style='margin: 0 10px;'>
     <i class="fa fa-comments fa-fw" style="color: #f5f5f5;"></i>
-    <a href='https://github.com/community-scripts/ProxmoxVE/discussions' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Discussions</a>
+    <a href='https://github.com/minamion/ProxmoxVE-with-Mirror/discussions' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Discussions</a>
   </span>
   <span style='margin: 0 10px;'>
     <i class="fa fa-exclamation-circle fa-fw" style="color: #f5f5f5;"></i>
-    <a href='https://github.com/community-scripts/ProxmoxVE/issues' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Issues</a>
+    <a href='https://github.com/minamion/ProxmoxVE-with-Mirror/issues' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Issues</a>
   </span>
 </div>
 EOF
@@ -524,4 +524,4 @@ fi
 post_update_to_api "done" "none"
 msg_ok "Completed Successfully!\n"
 echo -e "Setup Cloud-Init before starting \n
-More info at https://github.com/community-scripts/ProxmoxVE/discussions/272 \n"
+More info at https://github.com/minamion/ProxmoxVE-with-Mirror/discussions/272 \n"

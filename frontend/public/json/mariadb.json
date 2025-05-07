@@ -9,7 +9,7 @@
     "updateable": false,
     "privileged": false,
     "interface_port": 3306,
-    "documentation": "https://github.com/community-scripts/ProxmoxVE/discussions/192",
+    "documentation": "https://github.com/minamion/ProxmoxVE-with-Mirror/discussions/192",
     "website": "https://mariadb.org/",
     "logo": "https://raw.githubusercontent.com/loganmarchione/homelab-svg-assets/main/assets/mariadb.svg",
     "config_path": "",
@@ -49,4 +49,3 @@
         }
     ]
 }
-

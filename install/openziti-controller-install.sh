@@ -2,10 +2,10 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: emoscardini
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Source: https://github.com/openziti/ziti
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -21,7 +21,7 @@ msg_info "Installing openziti"
 mkdir -p --mode=0755 /usr/share/keyrings
 curl -fsSL https://get.openziti.io/tun/package-repos.gpg | gpg --dearmor -o /usr/share/keyrings/openziti.gpg
 echo "deb [signed-by=/usr/share/keyrings/openziti.gpg] https://packages.openziti.org/zitipax-openziti-deb-stable debian main" >/etc/apt/sources.list.d/openziti.list
-$STD apt-get update 
+$STD apt-get update
 $STD apt-get install -y openziti-controller openziti-console
 msg_ok "Installed openziti"
 

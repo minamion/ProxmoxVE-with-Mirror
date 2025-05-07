@@ -2,7 +2,7 @@
 source <(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/minamion/ProxmoxVE-with-Mirror/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: dave-yap (dave-yap)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 # Source: https://zitadel.com/
 
 APP="Zitadel"

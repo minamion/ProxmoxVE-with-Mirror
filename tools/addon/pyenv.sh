@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 
 set -e
 YW=$(echo "\033[33m")
@@ -116,7 +116,7 @@ if [[ "${prompt,,}" =~ ^(y|yes)$ ]]; then
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 
 source /srv/esphome/bin/activate
 esphome dashboard /srv/esphome/

@@ -2,7 +2,7 @@
 # Author: tteck (tteckster)
 # Co-Author: MickLesk
 # License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# https://github.com/minamion/ProxmoxVE-with-Mirror/raw/main/LICENSE
 
 # This function sets color variables for formatting output in the terminal
 color() {

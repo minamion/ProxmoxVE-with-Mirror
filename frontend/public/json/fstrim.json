@@ -1,13 +1,15 @@
 {
   "name": "Proxmox VE LXC Filesystem Trim",
   "slug": "fstrim",
-  "categories": [1],
+  "categories": [
+    1
+  ],
   "date_created": "2024-04-29",
   "type": "pve",
   "updateable": false,
   "privileged": false,
   "interface_port": null,
-  "documentation": "https://github.com/community-scripts/ProxmoxVE/discussions/805",
+  "documentation": "https://github.com/minamion/ProxmoxVE-with-Mirror/discussions/805",
   "website": null,
   "logo": "https://raw.githubusercontent.com/selfhst/icons/refs/heads/main/svg/linuxcontainers.svg",
   "config_path": "",
@@ -40,4 +42,3 @@
     }
   ]
 }
-
