@@ -31,7 +31,7 @@ function update_script() {
    msg_info "Updating yt-dlp"
    $STD yt-dlp -U
    msg_ok "Updated yt-dlp"
-   RELEASE=$(curl -fsSL https://api.github.com/repos/marcopiovanello/yt-dlp-web-ui/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+   RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/marcopiovanello/yt-dlp-web-ui/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
    if [[ "${RELEASE}" != "$(cat /opt/yt-dlp-webui_version.txt)" ]] || [[ ! -f /opt/yt-dlp-webui_version.txt ]]; then
 
       msg_info "Stopping $APP"

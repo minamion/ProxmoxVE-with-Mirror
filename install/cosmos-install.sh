@@ -35,7 +35,7 @@ msg_ok "Installed Docker"
 
 msg_info "Install Cosmos"
 mkdir -p /opt/cosmos
-LATEST_RELEASE=$(curl -fsSL https://api.github.com/repos/azukaar/Cosmos-Server/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+LATEST_RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/azukaar/Cosmos-Server/releases/latest | grep "tag_name" | cut -d '"' -f 4)
 ZIP_FILE="cosmos-cloud-${LATEST_RELEASE#v}-amd64.zip"
 curl -fsSL "https://proxy.seaslug.moe/github.com/azukaar/Cosmos-Server/releases/download/${LATEST_RELEASE}/${ZIP_FILE}" -o "/opt/cosmos/${ZIP_FILE}"
 cd /opt/cosmos

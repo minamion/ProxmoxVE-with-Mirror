@@ -14,7 +14,7 @@ network_check
 update_os
 
 msg_info "Installing Prometheus"
-RELEASE=$(curl -fsSL https://api.github.com/repos/prometheus/prometheus/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/prometheus/prometheus/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 mkdir -p /etc/prometheus
 mkdir -p /var/lib/prometheus
 curl -fsSL "https://proxy.seaslug.moe/github.com/prometheus/prometheus/releases/download/v${RELEASE}/prometheus-${RELEASE}.linux-amd64.tar.gz" -o $(basename "https://github.com/prometheus/prometheus/releases/download/v${RELEASE}/prometheus-${RELEASE}.linux-amd64.tar.gz")

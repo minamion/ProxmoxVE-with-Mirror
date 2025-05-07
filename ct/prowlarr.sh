@@ -32,7 +32,7 @@ function update_script() {
   msg_info "Updating $APP LXC"
   temp_file="$(mktemp)"
   rm -rf /opt/Prowlarr
-  RELEASE=$(curl -fsSL https://api.github.com/repos/Prowlarr/Prowlarr/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Prowlarr/Prowlarr/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   curl -fsSL "https://proxy.seaslug.moe/github.com/Prowlarr/Prowlarr/releases/download/v${RELEASE}/Prowlarr.master.${RELEASE}.linux-core-x64.tar.gz" -o "$temp_file"
   $STD tar -xvzf "$temp_file"
   mv Prowlarr /opt

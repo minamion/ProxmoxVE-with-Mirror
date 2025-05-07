@@ -19,7 +19,7 @@ $STD apt-get install -y \
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Navidrome"
-RELEASE=$(curl -fsSL https://api.github.com/repos/navidrome/navidrome/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/navidrome/navidrome/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
 TMP_DEB=$(mktemp --suffix=.deb)
 curl -fsSL -o "${TMP_DEB}" "https://github.com/navidrome/navidrome/releases/download/${RELEASE}/navidrome_${RELEASE#v}_linux_amd64.deb"
 $STD apt-get install -y "${TMP_DEB}"

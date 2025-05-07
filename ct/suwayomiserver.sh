@@ -28,7 +28,7 @@ function update_script() {
         msg_error "No ${APP} Installation Found!"
         exit
     fi
-    RELEASE=$(curl -fsSL https://api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
     if [[ "${RELEASE}" != "$(cat /opt/suwayomi-server_version.txt)" ]] || [[ ! -f /opt/suwayomi-server_version.txt ]]; then
         msg_info "Updating $APP"
         msg_info "Stopping $APP"
@@ -36,7 +36,7 @@ function update_script() {
         msg_ok "Stopped $APP"
         msg_info "Updating $APP to v${RELEASE}"
         cd /tmp
-        URL=$(curl -fsSL https://api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "browser_download_url" | awk '{print substr($2, 2, length($2)-2) }' | tail -n+2 | head -n 1)
+        URL=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "browser_download_url" | awk '{print substr($2, 2, length($2)-2) }' | tail -n+2 | head -n 1)
         curl -fsSL "$URL" -o $(basename "$URL")
         $STD dpkg -i /tmp/*.deb
         msg_ok "Updated $APP to v${RELEASE}"

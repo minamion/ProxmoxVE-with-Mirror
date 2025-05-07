@@ -44,7 +44,7 @@ $STD curl -fsSL https://getcomposer.org/installer | php -- --install-dir=/usr/lo
 msg_ok "Installed Composer"
 
 msg_info "Installing Paymenter"
-RELEASE=$(curl -fsSL https://api.github.com/repos/paymenter/paymenter/releases/latest | grep '"tag_name"' | sed -E 's/.*"tag_name": "([^"]+)".*/\1/')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/paymenter/paymenter/releases/latest | grep '"tag_name"' | sed -E 's/.*"tag_name": "([^"]+)".*/\1/')
 echo "${RELEASE}" >/opt/"${APPLICATION}"_version.txt
 mkdir -p /opt/paymenter
 cd /opt/paymenter

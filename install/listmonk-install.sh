@@ -35,7 +35,7 @@ msg_info "Installing listmonk"
 cd /opt
 mkdir /opt/listmonk
 mkdir /opt/listmonk/uploads
-RELEASE=$(curl -fsSL https://api.github.com/repos/knadh/listmonk/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/knadh/listmonk/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/knadh/listmonk/releases/download/v${RELEASE}/listmonk_${RELEASE}_linux_amd64.tar.gz" -o $(basename "https://github.com/knadh/listmonk/releases/download/v${RELEASE}/listmonk_${RELEASE}_linux_amd64.tar.gz")
 tar -xzf "listmonk_${RELEASE}_linux_amd64.tar.gz" -C /opt/listmonk
 

@@ -42,7 +42,7 @@ mysql -u root -e "GRANT ALL ON $DB_NAME.* TO '$DB_USER'@'localhost'; FLUSH PRIVI
 msg_ok "Set up database"
 
 msg_info "Installing Firefly III (Patience)"
-RELEASE=$(curl -fsSL https://api.github.com/repos/firefly-iii/firefly-iii/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4)}')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/firefly-iii/firefly-iii/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4)}')
 cd /opt
 curl -fsSL "https://proxy.seaslug.moe/github.com/firefly-iii/firefly-iii/releases/download/v${RELEASE}/FireflyIII-v${RELEASE}.tar.gz" -o $(basename "https://github.com/firefly-iii/firefly-iii/releases/download/v${RELEASE}/FireflyIII-v${RELEASE}.tar.gz")
 mkdir -p /opt/firefly

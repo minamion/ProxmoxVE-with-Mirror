@@ -58,7 +58,7 @@ msg_ok "Set up PostgreSQL"
 
 msg_info "Setup Wiki.js"
 temp_file=$(mktemp)
-RELEASE=$(curl -fsSL https://api.github.com/repos/Requarks/wiki/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Requarks/wiki/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/requarks/wiki/releases/download/v${RELEASE}/wiki-js.tar.gz" -o ""$temp_file""
 mkdir /opt/wikijs
 tar -xzf "$temp_file" -C /opt/wikijs

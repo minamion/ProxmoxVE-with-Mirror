@@ -26,7 +26,7 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -fsSL https://api.github.com/repos/ErsatzTV/ErsatzTV/releases | grep -oP '"tag_name": "\K[^"]+' | head -n 1)
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/ErsatzTV/ErsatzTV/releases | grep -oP '"tag_name": "\K[^"]+' | head -n 1)
   if [[ ! -f /opt/${APP}_version.txt && $(echo "x.x.x" >/opt/${APP}_version.txt) || "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Stopping ErsatzTV"
     systemctl stop ersatzTV

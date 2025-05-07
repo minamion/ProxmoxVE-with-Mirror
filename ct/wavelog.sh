@@ -27,7 +27,7 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -fsSL https://api.github.com/repos/wavelog/wavelog/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/wavelog/wavelog/releases/latest | grep "tag_name" | cut -d '"' -f 4)
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Stopping Services"
     systemctl stop apache2

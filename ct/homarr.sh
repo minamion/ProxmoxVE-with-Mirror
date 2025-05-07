@@ -80,7 +80,7 @@ EOF
     msg_ok "Updated Services"
     systemctl daemon-reload
   fi
-  RELEASE=$(curl -fsSL https://api.github.com/repos/homarr-labs/homarr/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/homarr-labs/homarr/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
 
     msg_info "Stopping Services (Patience)"

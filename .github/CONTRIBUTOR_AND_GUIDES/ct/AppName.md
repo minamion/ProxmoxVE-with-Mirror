@@ -1,6 +1,6 @@
 # **AppName<span></span>.sh Scripts**
 
- `AppName.sh` scripts found in the `/ct` directory. These scripts are responsible for the installation of the desired application. For this guide we take `/ct/snipeit.sh` as example.
+`AppName.sh` scripts found in the `/ct` directory. These scripts are responsible for the installation of the desired application. For this guide we take `/ct/snipeit.sh` as example.
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@
 - Import the build.func file.
 - When developing your own script, change the URL to your own repository.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > You also need to change all apperances of this URL in `misc/build.func` and `misc/install.func`
 
 Example for development:
@@ -80,7 +80,7 @@ Example:
 ---
 
 ## 2 **Variables and function import**
->
+
 > [!NOTE]
 > You need to have all this set in your script, otherwise it will not work!
 
@@ -90,19 +90,19 @@ Example:
 - `APP` needs to be set to the application name and must be equal to the filenames of your scripts.
 - `var_tags`: You can set Tags for the CT wich show up in the Proxmox UI. Don´t overdo it!
 
->[!NOTE]
->Description for all Default Values
+> [!NOTE]
+> Description for all Default Values
 >
->| Variable | Description | Notes |
->|----------|-------------|-------|
->| `APP` | Application name | Must match ct\AppName.sh |
->| `var_tags` | Proxmox display tags without Spaces, only ; | Limit the number to 2 |  
->| `var_cpu` | CPU cores | Number of cores |
->| `var_ram` | RAM | In MB |
->| `var_disk` | Disk capacity | In GB |
->| `var_os` | Operating system | alpine, debian, ubuntu |
->| `var_version` | OS version | e.g., 3.20, 11, 12, 20.04 |
->| `var_unprivileged` | Container type | 1 = Unprivileged, 0 = Privileged |
+> | Variable           | Description                                 | Notes                            |
+> | ------------------ | ------------------------------------------- | -------------------------------- |
+> | `APP`              | Application name                            | Must match ct\AppName.sh         |
+> | `var_tags`         | Proxmox display tags without Spaces, only ; | Limit the number to 2            |
+> | `var_cpu`          | CPU cores                                   | Number of cores                  |
+> | `var_ram`          | RAM                                         | In MB                            |
+> | `var_disk`         | Disk capacity                               | In GB                            |
+> | `var_os`           | Operating system                            | alpine, debian, ubuntu           |
+> | `var_version`      | OS version                                  | e.g., 3.20, 11, 12, 20.04        |
+> | `var_unprivileged` | Container type                              | 1 = Unprivileged, 0 = Privileged |
 
 Example:
 
@@ -122,6 +122,7 @@ var_unprivileged="1"
 ```bash
 header_info "$APP"
 ```
+
 - `header_info`: Generates ASCII header for APP
 
 ## 2.3 **🛠 Core functions**
@@ -173,7 +174,7 @@ if [[ ! -d /opt/snipe-it ]]; then
 Example with a Github Release:
 
 ```bash
- RELEASE=$(curl -fsSL https://api.github.com/repos/snipe/snipe-it/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+ RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/snipe/snipe-it/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Updating ${APP} to v${RELEASE}"
     #DO UPDATE
@@ -187,7 +188,7 @@ Example with a Github Release:
 ### 3.4 **Verbosity**
 
 - Use the appropriate flag (**-q** in the examples) for a command to suppress its output.
-Example:
+  Example:
 
 ```bash
 wget -q
@@ -199,8 +200,8 @@ unzip -q
 Example:
 
 ```bash
-$STD php artisan migrate --force 
-$STD php artisan config:clear 
+$STD php artisan migrate --force
+$STD php artisan config:clear
 ```
 
 ### 3.5 **Backups**
@@ -208,8 +209,8 @@ $STD php artisan config:clear
 - Backup user data if necessary.
 - Move all user data back in the directory when the update is finished.
 
->[!NOTE]
->This is not meant to be a permanent backup
+> [!NOTE]
+> This is not meant to be a permanent backup
 
 Example backup:
 
@@ -228,7 +229,7 @@ Example config restore:
 ### 3.6 **Cleanup**
 
 - Do not forget to remove any temporary files/folders such as zip-files or temporary backups.
-Example:
+  Example:
 
 ```bash
   rm -rf /opt/v${RELEASE}.zip
@@ -278,7 +279,7 @@ echo -e "${TAB}${GATEWAY}${BGN}http://${IP}${CL}"
 ## 5. **Contribution checklist**
 
 - [ ] Shebang is correctly set (`#!/usr/bin/env bash`).
-- [ ] Correct link to *build.func*
+- [ ] Correct link to _build.func_
 - [ ] Metadata (author, license) is included at the top.
 - [ ] Variables follow naming conventions.
 - [ ] Update function exists.

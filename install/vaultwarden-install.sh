@@ -25,8 +25,8 @@ $STD apt-get install -y git \
   ssl-cert
 msg_ok "Installed Dependencies"
 
-WEBVAULT=$(curl -fsSL https://api.github.com/repos/dani-garcia/bw_web_builds/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-VAULT=$(curl -fsSL https://api.github.com/repos/dani-garcia/vaultwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+WEBVAULT=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/dani-garcia/bw_web_builds/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+VAULT=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/dani-garcia/vaultwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 
 msg_info "Installing Rust"
 curl -fsSL https://sh.rustup.rs -o rustup-init.sh

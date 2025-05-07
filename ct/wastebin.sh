@@ -27,7 +27,7 @@ function update_script() {
         msg_error "No ${APP} Installation Found!"
         exit
     fi
-    RELEASE=$(curl -fsSL https://api.github.com/repos/matze/wastebin/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/matze/wastebin/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
     # Dirty-Fix 03/2025 for missing APP_version.txt on old installations, set to pre-latest release
     msg_info "Running Migration"
     if [[ ! -f /opt/${APP}_version.txt ]]; then

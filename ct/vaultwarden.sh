@@ -28,10 +28,10 @@ function update_script() {
     exit
   fi
 
-  VAULT=$(curl -fsSL https://api.github.com/repos/dani-garcia/vaultwarden/releases/latest |
+  VAULT=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/dani-garcia/vaultwarden/releases/latest |
     grep "tag_name" |
     awk '{print substr($2, 2, length($2)-3) }')
-  WVRELEASE=$(curl -fsSL https://api.github.com/repos/dani-garcia/bw_web_builds/releases/latest |
+  WVRELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/dani-garcia/bw_web_builds/releases/latest |
     grep "tag_name" |
     awk '{print substr($2, 2, length($2)-3) }')
 

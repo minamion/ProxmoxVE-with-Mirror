@@ -46,7 +46,7 @@ msg_ok "Installed Node.js"
 
 msg_info "Setup ${APPLICATION} (Patience)"
 temp_file=$(mktemp)
-RELEASE=$(curl -fsSL https://api.github.com/repos/StarFleetCPTN/GoMFT/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/StarFleetCPTN/GoMFT/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/StarFleetCPTN/GoMFT/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
 tar -xzf "$temp_file"
 mv GoMFT-"${RELEASE}"/ /opt/gomft

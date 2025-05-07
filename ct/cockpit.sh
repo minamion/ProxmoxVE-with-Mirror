@@ -53,7 +53,7 @@ function update_script() {
       gawk
     msg_ok "Installed dependencies"
     msg_info "Installing Cockpit file sharing"
-    URL=$(curl -fsSL https://api.github.com/repos/45Drives/cockpit-file-sharing/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
+    URL=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/45Drives/cockpit-file-sharing/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
     FILE=$(basename "$URL")
     curl -fsSL "$URL" -o "$FILE"
     $STD dpkg -i "$FILE" || $STD apt-get install -f -y
@@ -70,7 +70,7 @@ function update_script() {
       samba-common-bin
     msg_ok "Installed dependencies"
     msg_info "Installing Cockpit identities"
-    URL=$(curl -fsSL https://api.github.com/repos/45Drives/cockpit-identities/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
+    URL=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/45Drives/cockpit-identities/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
     FILE=$(basename "$URL")
     curl -fsSL "$URL" -o "$FILE"
     $STD dpkg -i "$FILE" || $STD apt-get install -f -y
@@ -86,7 +86,7 @@ function update_script() {
       zip
     msg_ok "Installed dependencies"
     msg_info "Installing Cockpit navigator"
-    URL=$(curl -fsSL https://api.github.com/repos/45Drives/cockpit-navigator/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
+    URL=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/45Drives/cockpit-navigator/releases/latest | grep download | grep focal_all.deb | cut -d\" -f4)
     FILE=$(basename "$URL")
     curl -fsSL "$URL" -o "$FILE"
     $STD dpkg -i "$FILE" || $STD apt-get install -f -y

@@ -29,7 +29,7 @@ function update_script() {
         msg_error "No ${APP} Installation Found!"
         exit
     fi
-    RELEASE=$(curl -fsSL https://api.github.com/repos/authelia/authelia/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/authelia/authelia/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
     if [[ "${RELEASE}" != "$(/usr/bin/authelia -v | awk '{print substr($3, 2, length($2)) }')" ]]; then
         msg_info "Updating $APP to ${RELEASE}"
         $STD apt-get update

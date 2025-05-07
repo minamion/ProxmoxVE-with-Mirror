@@ -42,7 +42,7 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Setting up seelf. Patience"
-RELEASE=$(curl -fsSL https://api.github.com/repos/YuukanOO/seelf/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/YuukanOO/seelf/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/YuukanOO/seelf/archive/refs/tags/v${RELEASE}.tar.gz" -o $(basename "https://github.com/YuukanOO/seelf/archive/refs/tags/v${RELEASE}.tar.gz")
 tar -xzf v"${RELEASE}".tar.gz
 mv seelf-"${RELEASE}"/ /opt/seelf

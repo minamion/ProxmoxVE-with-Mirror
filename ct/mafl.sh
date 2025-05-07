@@ -27,7 +27,7 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -fsSL https://api.github.com/repos/hywax/mafl/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/hywax/mafl/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   msg_info "Updating Mafl to v${RELEASE} (Patience)"
   systemctl stop mafl
   curl -fsSL "https://proxy.seaslug.moe/github.com/hywax/mafl/archive/refs/tags/v${RELEASE}.tar.gz" -o $(basename "https://github.com/hywax/mafl/archive/refs/tags/v${RELEASE}.tar.gz")

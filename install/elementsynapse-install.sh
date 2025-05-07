@@ -61,7 +61,7 @@ sed -i '34d' /etc/matrix-synapse/homeserver.yaml
 systemctl start matrix-synapse
 temp_file=$(mktemp)
 mkdir -p /opt/synapse-admin
-RELEASE=$(curl -fsSL https://api.github.com/repos/etkecc/synapse-admin/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/etkecc/synapse-admin/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/etkecc/synapse-admin/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
 tar xzf "$temp_file" -C /opt/synapse-admin --strip-components=1
 cd /opt/synapse-admin

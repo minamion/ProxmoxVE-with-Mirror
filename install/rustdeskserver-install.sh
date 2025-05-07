@@ -15,7 +15,7 @@ update_os
 
 msg_info "Setup RustDesk"
 
-RELEASE=$(curl -fsSL https://api.github.com/repos/rustdesk/rustdesk-server/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/rustdesk/rustdesk-server/releases/latest | grep "tag_name" | awk -F '"' '{print $4}')
 TEMPDIR=$(mktemp -d)
 
 curl -fsSL "https://proxy.seaslug.moe/github.com/rustdesk/rustdesk-server/releases/download/${RELEASE}/rustdesk-server-hbbr_${RELEASE}_amd64.deb" \

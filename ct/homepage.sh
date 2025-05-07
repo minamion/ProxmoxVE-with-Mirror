@@ -45,7 +45,7 @@ function update_script() {
     }
   fi
   LOCAL_IP=$(hostname -I | awk '{print $1}')
-  RELEASE=$(curl -fsSL https://api.github.com/repos/gethomepage/homepage/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/gethomepage/homepage/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]] || [[ ! -f /opt/${APP}_version.txt ]]; then
     msg_info "Updating Homepage to v${RELEASE} (Patience)"
     systemctl stop homepage
@@ -59,7 +59,7 @@ function update_script() {
     $STD npx --yes update-browserslist-db@latest
     export NEXT_PUBLIC_VERSION="v$RELEASE"
     export NEXT_PUBLIC_REVISION="source"
-    export NEXT_PUBLIC_BUILDTIME=$(curl -fsSL https://api.github.com/repos/gethomepage/homepage/releases/latest | jq -r '.published_at')
+    export NEXT_PUBLIC_BUILDTIME=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/gethomepage/homepage/releases/latest | jq -r '.published_at')
     export NEXT_TELEMETRY_DISABLED=1
     $STD pnpm build
     if [[ ! -f /opt/homepage/.env ]]; then

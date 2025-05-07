@@ -85,7 +85,7 @@ msg_ok "MongoDB successfully configurated"
 
 msg_info "Install NodeBB"
 cd /opt
-RELEASE=$(curl -fsSL https://api.github.com/repos/NodeBB/NodeBB/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/NodeBB/NodeBB/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/NodeBB/NodeBB/archive/refs/tags/v${RELEASE}.zip" -o $(basename "https://github.com/NodeBB/NodeBB/archive/refs/tags/v${RELEASE}.zip")
 unzip -q v${RELEASE}.zip
 mv NodeBB-${RELEASE} /opt/nodebb

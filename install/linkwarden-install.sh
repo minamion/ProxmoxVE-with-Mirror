@@ -91,7 +91,7 @@ fi
 
 msg_info "Installing Linkwarden (Patience)"
 cd /opt
-RELEASE=$(curl -fsSL https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip" -o $(basename "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip")
 unzip -q ${RELEASE}.zip
 mv linkwarden-${RELEASE:1} /opt/linkwarden

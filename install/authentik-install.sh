@@ -38,14 +38,14 @@ msg_ok "Installed Dependencies"
 
 msg_info "Installing yq"
 cd /tmp
-YQ_LATEST="$(curl -fsSL https://api.github.com/repos/mikefarah/yq/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')"
+YQ_LATEST="$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/mikefarah/yq/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')"
 curl -fsSL "https://proxy.seaslug.moe/github.com/mikefarah/yq/releases/download/${YQ_LATEST}/yq_linux_amd64" -o /usr/bin/yq
 chmod +x /usr/bin/yq
 msg_ok "Installed yq"
 
 msg_info "Installing GeoIP"
 cd /tmp
-GEOIP_RELEASE=$(curl -fsSL https://api.github.com/repos/maxmind/geoipupdate/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+GEOIP_RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/maxmind/geoipupdate/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/maxmind/geoipupdate/releases/download/v${GEOIP_RELEASE}/geoipupdate_${GEOIP_RELEASE}_linux_amd64.deb" -o "geoipupdate.deb"
 $STD dpkg -i geoipupdate.deb
 cat <<EOF >/etc/GeoIP.conf
@@ -107,7 +107,7 @@ $STD sudo -u postgres psql -c "ALTER USER $DB_USER WITH SUPERUSER;"
 msg_ok "Installed PostgreSQL"
 
 msg_info "Installing authentik"
-RELEASE=$(curl -fsSL https://api.github.com/repos/goauthentik/authentik/releases/latest | grep "tarball_url" | awk '{print substr($2, 2, length($2)-3)}')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/goauthentik/authentik/releases/latest | grep "tarball_url" | awk '{print substr($2, 2, length($2)-3)}')
 mkdir -p /opt/authentik
 curl -fsSL "${RELEASE}" -o "authentik.tar.gz"
 tar -xzf authentik.tar.gz -C /opt/authentik --strip-components 1 --overwrite
