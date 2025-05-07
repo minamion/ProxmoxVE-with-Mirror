@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://proxy.seaslug.moe/raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -37,7 +37,7 @@ function update_script() {
     msg_error "Failed to create backup of ${COMPOSE_BASENAME}!"
     exit 1
   }
-  GITHUB_URL="https://raw.githubusercontent.com/moghtech/komodo/main/compose/${COMPOSE_BASENAME}"
+  GITHUB_URL="https://proxy.seaslug.moe/raw.githubusercontent.com/moghtech/komodo/main/compose/${COMPOSE_BASENAME}"
   if ! curl -fsSL "$GITHUB_URL" -o "$COMPOSE_FILE"; then
     msg_error "Failed to download ${COMPOSE_BASENAME} from GitHub!"
     mv "$BACKUP_FILE" "$COMPOSE_FILE"

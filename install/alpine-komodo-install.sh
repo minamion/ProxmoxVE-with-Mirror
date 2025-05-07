@@ -51,10 +51,10 @@ esac
 
 mkdir -p /opt/komodo
 cd /opt/komodo
-curl -fsSL "https://raw.githubusercontent.com/moghtech/komodo/main/compose/$DB_COMPOSE_FILE" -o "$(basename "$DB_COMPOSE_FILE")"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.com/moghtech/komodo/main/compose/$DB_COMPOSE_FILE" -o "$(basename "$DB_COMPOSE_FILE")"
 
 msg_info "Setup Komodo Environment"
-curl -fsSL "https://raw.githubusercontent.com/moghtech/komodo/main/compose/compose.env" -o "/opt/komodo/compose.env"
+curl -fsSL "https://proxy.seaslug.moe/raw.githubusercontent.com/moghtech/komodo/main/compose/compose.env" -o "/opt/komodo/compose.env"
 DB_PASSWORD=$(openssl rand -base64 16 | tr -d '/+=')
 PASSKEY=$(openssl rand -base64 24 | tr -d '/+=')
 WEBHOOK_SECRET=$(openssl rand -base64 24 | tr -d '/+=')
