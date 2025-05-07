@@ -15,7 +15,7 @@ update_os
 
 msg_info "Setup TriliumNext"
 cd /opt
-RELEASE=$(curl -fsSL https://api.github.com/repos/TriliumNext/Notes/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/TriliumNext/Notes/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/TriliumNext/Notes/releases/download/v${RELEASE}/TriliumNextNotes-Server-v${RELEASE}-linux-x64.tar.xz" -o $(basename "https://github.com/TriliumNext/Notes/releases/download/v${RELEASE}/TriliumNextNotes-Server-v${RELEASE}-linux-x64.tar.xz")
 tar -xf TriliumNextNotes-Server-v${RELEASE}-linux-x64.tar.xz
 mv TriliumNextNotes-Server-$RELEASE-linux-x64 /opt/trilium

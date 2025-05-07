@@ -829,7 +829,7 @@ function setup_uv() {
   fi
 
   # install or update uv
-  curl -fsSL "https://github.com/astral-sh/uv/releases/latest/download/${UV_TAR}" -o "$TMP_DIR/uv.tar.gz"
+  curl -fsSL "https://proxy.seaslug.moe/github.com/astral-sh/uv/releases/latest/download/${UV_TAR}" -o "$TMP_DIR/uv.tar.gz"
   tar -xzf "$TMP_DIR/uv.tar.gz" -C "$TMP_DIR"
   install -m 755 "$TMP_DIR"/*/uv "$UV_BIN"
   rm -rf "$TMP_DIR"
@@ -854,7 +854,7 @@ function setup_gs() {
   TMP_DIR=$(mktemp -d)
   CURRENT_VERSION=$(gs --version 2>/dev/null || echo "0")
 
-  RELEASE_JSON=$(curl -fsSL https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest)
+  RELEASE_JSON=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest)
   LATEST_VERSION=$(echo "$RELEASE_JSON" | grep '"tag_name":' | head -n1 | cut -d '"' -f4 | sed 's/^gs//')
   LATEST_VERSION_DOTTED=$(echo "$RELEASE_JSON" | grep '"name":' | head -n1 | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
 
@@ -871,7 +871,7 @@ function setup_gs() {
   fi
 
   msg_info "Installing/Updating Ghostscript to $LATEST_VERSION_DOTTED"
-  curl -fsSL "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${LATEST_VERSION}/ghostscript-${LATEST_VERSION_DOTTED}.tar.gz" -o "$TMP_DIR/ghostscript.tar.gz"
+  curl -fsSL "https://proxy.seaslug.moe/github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${LATEST_VERSION}/ghostscript-${LATEST_VERSION_DOTTED}.tar.gz" -o "$TMP_DIR/ghostscript.tar.gz"
 
   if ! tar -xzf "$TMP_DIR/ghostscript.tar.gz" -C "$TMP_DIR"; then
     msg_error "Failed to extract Ghostscript archive."

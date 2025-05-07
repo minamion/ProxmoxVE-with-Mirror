@@ -21,7 +21,7 @@ JAVA_VERSION=21 install_java
 
 msg_info "Settting up Suwayomi-Server"
 temp_file=$(mktemp)
-RELEASE=$(curl -fsSL https://api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL "https://github.com/Suwayomi/Suwayomi-Server/releases/download/${RELEASE}/Suwayomi-Server-${RELEASE}-debian-all.deb" -o "$temp_file"
 $STD dpkg -i "$temp_file"
 echo "${RELEASE}" >/opt/suwayomi-server_version.txt

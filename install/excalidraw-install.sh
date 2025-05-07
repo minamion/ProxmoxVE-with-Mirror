@@ -33,7 +33,7 @@ msg_ok "Setup Node.js"
 
 msg_info "Setup Excalidraw"
 temp_file=$(mktemp)
-RELEASE=$(curl -fsSL https://api.github.com/repos/excalidraw/excalidraw/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/excalidraw/excalidraw/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/excalidraw/excalidraw/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
 tar xzf $temp_file
 mv excalidraw-${RELEASE} /opt/excalidraw

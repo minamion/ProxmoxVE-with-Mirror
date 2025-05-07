@@ -28,7 +28,7 @@ $STD apt-get update
 $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
-RELEASE=$(curl -fsSL https://api.github.com/repos/Lissy93/dashy/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Lissy93/dashy/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 msg_info "Installing Dashy ${RELEASE} (Patience)"
 mkdir -p /opt/dashy
 curl -fsSL "https://proxy.seaslug.moe/github.com/Lissy93/dashy/archive/refs/tags/${RELEASE}.tar.gz" | tar -xz -C /opt/dashy --strip-components=1

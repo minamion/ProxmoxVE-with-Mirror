@@ -18,7 +18,7 @@ $STD apt-get install -y openjdk-17-jre
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Komga"
-RELEASE=$(curl -fsSL https://api.github.com/repos/gotson/komga/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/gotson/komga/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/gotson/komga/releases/download/${RELEASE}/komga-${RELEASE}.jar" -o $(basename "https://github.com/gotson/komga/releases/download/${RELEASE}/komga-${RELEASE}.jar")
 mkdir -p /opt/komga
 mv -f komga-${RELEASE}.jar /opt/komga/komga.jar

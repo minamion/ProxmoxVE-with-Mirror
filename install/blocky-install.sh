@@ -18,7 +18,7 @@ if systemctl is-active systemd-resolved >/dev/null 2>&1; then
   systemctl disable -q --now systemd-resolved
 fi
 mkdir /opt/blocky
-RELEASE=$(curl -fsSL https://api.github.com/repos/0xERR0R/blocky/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/0xERR0R/blocky/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/0xERR0R/blocky/releases/download/v${RELEASE}/blocky_v${RELEASE}_Linux_x86_64.tar.gz" | tar -xzf - -C /opt/blocky/
 
 cat <<EOF >/opt/blocky/config.yml

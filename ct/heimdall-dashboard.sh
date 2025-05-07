@@ -41,7 +41,7 @@ function update_script() {
     msg_info "Updating Heimdall Dashboard to ${RELEASE}"
     curl -fsSL "https://proxy.seaslug.moe/github.com/linuxserver/Heimdall/archive/${RELEASE}.tar.gz" -o $(basename "https://github.com/linuxserver/Heimdall/archive/${RELEASE}.tar.gz")
     tar xzf "${RELEASE}".tar.gz
-    VER=$(curl -fsSL https://api.github.com/repos/linuxserver/Heimdall/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+    VER=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/linuxserver/Heimdall/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
     cp -R Heimdall-"${VER}"/* /opt/Heimdall
     cd /opt/Heimdall
     $STD apt-get install -y composer

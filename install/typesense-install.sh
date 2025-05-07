@@ -14,7 +14,7 @@ network_check
 update_os
 
 msg_info "Installing TypeSense"
-RELEASE=$(curl -fsSL https://api.github.com/repos/typesense/typesense/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/typesense/typesense/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 cd /opt
 curl -fsSL "https://dl.typesense.org/releases/${RELEASE}/typesense-server-${RELEASE}-amd64.deb" -o $(basename "https://dl.typesense.org/releases/${RELEASE}/typesense-server-${RELEASE}-amd64.deb")
 $STD apt install -y /opt/typesense-server-${RELEASE}-amd64.deb

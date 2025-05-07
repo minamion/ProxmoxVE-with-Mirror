@@ -34,7 +34,7 @@ msg_ok "Installed Node.js"
 
 msg_info "Installing Pingvin Share (Patience)"
 cd /opt
-RELEASE=$(curl -fsSL https://api.github.com/repos/stonith404/pingvin-share/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/stonith404/pingvin-share/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 echo "${RELEASE}" >"/opt/${APPLICATION}_version.txt"
 curl -fsSL "https://proxy.seaslug.moe/github.com/stonith404/pingvin-share/archive/refs/tags/v${RELEASE}.zip" -o $(basename "https://github.com/stonith404/pingvin-share/archive/refs/tags/v${RELEASE}.zip")
 unzip -q v${RELEASE}.zip

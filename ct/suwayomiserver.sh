@@ -32,7 +32,7 @@ function update_script() {
     $STD apt-get remove -y openjdk-17-jre
   fi
   JAVA_VERSION=21 install_java
-  RELEASE=$(curl -fsSL https://api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
   if [[ "${RELEASE}" != "$(cat /opt/suwayomi-server_version.txt)" ]] || [[ ! -f /opt/suwayomi-server_version.txt ]]; then
     msg_info "Updating $APP"
 
@@ -42,7 +42,7 @@ function update_script() {
 
     msg_info "Updating $APP to v${RELEASE}"
     temp_file=$(mktemp)
-    RELEASE=$(curl -fsSL https://api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Suwayomi/Suwayomi-Server/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
     curl -fsSL "https://github.com/Suwayomi/Suwayomi-Server/releases/download/${RELEASE}/Suwayomi-Server-${RELEASE}-debian-all.deb" -o "$temp_file"
     $STD dpkg -i "$temp_file"
     msg_ok "Updated $APP to v${RELEASE}"

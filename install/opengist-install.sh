@@ -18,7 +18,7 @@ $STD apt-get install -y git
 msg_ok "Installed Dependencies"
 
 msg_info "Install Opengist"
-RELEASE=$(curl -fsSL https://api.github.com/repos/thomiceli/opengist/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/thomiceli/opengist/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 echo "${RELEASE}" >"/opt/${APPLICATION}_version.txt"
 curl -fsSL "https://proxy.seaslug.moe/github.com/thomiceli/opengist/releases/download/v${RELEASE}/opengist${RELEASE}-linux-amd64.tar.gz" -o $(basename "https://github.com/thomiceli/opengist/releases/download/v${RELEASE}/opengist${RELEASE}-linux-amd64.tar.gz")
 $STD tar -xzf opengist${RELEASE}-linux-amd64.tar.gz

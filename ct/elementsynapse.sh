@@ -49,7 +49,7 @@ function update_script() {
 
   if [[ -f /systemd/system/synapse-admin.service ]]; then
     msg_info "Updating Synapse-Admin"
-    RELEASE=$(curl -fsSL https://api.github.com/repos/etkecc/synapse-admin/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/etkecc/synapse-admin/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
     if [[ "${RELEASE}" != "$(cat /opt/"${APP}"_version.txt)" ]] || [[ ! -f /opt/${APP}_version.txt ]]; then
       temp_file=$(mktemp)
       systemctl stop synapse-admin

@@ -15,7 +15,7 @@ network_check
 update_os
 
 msg_info "Installing Homebox"
-RELEASE=$(curl -fsSL https://api.github.com/repos/sysadminsmedia/homebox/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/sysadminsmedia/homebox/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/sysadminsmedia/homebox/releases/download/${RELEASE}/homebox_Linux_x86_64.tar.gz" | tar -xzf - -C /opt
 chmod +x /opt/homebox
 cat <<EOF >/opt/.env

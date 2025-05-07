@@ -30,7 +30,7 @@ function update_script() {
   fi
   NODE_VERSION="22"
   install_node_and_modules
-  RELEASE=$(curl -fsSL https://api.github.com/repos/actualbudget/actual/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/actualbudget/actual/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ -f /opt/actualbudget-data/config.json ]]; then
     if [[ ! -f /opt/actualbudget_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/actualbudget_version.txt)" ]]; then
       msg_info "Stopping ${APP}"

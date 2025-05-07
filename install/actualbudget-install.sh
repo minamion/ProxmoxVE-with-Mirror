@@ -15,7 +15,7 @@ update_os
 
 msg_info "Installing Actual Budget"
 cd /opt
-RELEASE=$(curl -fsSL https://api.github.com/repos/actualbudget/actual/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/actualbudget/actual/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 NODE_VERSION="22"
 install_node_and_modules
 mkdir -p /opt/actualbudget-data/{server-files,upload,migrate,user-files,migrations,config}

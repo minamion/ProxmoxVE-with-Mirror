@@ -40,7 +40,7 @@ function update_script() {
     msg_ok "Node.js 22 installed"
   fi
   export NODE_OPTIONS="--max_old_space_size=4096"
-  RELEASE=$(curl -fsSL https://api.github.com/repos/docmost/docmost/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/docmost/docmost/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Stopping ${APP}"
     systemctl stop docmost

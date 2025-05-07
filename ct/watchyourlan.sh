@@ -30,7 +30,7 @@ function update_script() {
     msg_info "Updating $APP"
     systemctl stop watchyourlan.service
     cp -R /data/config.yaml config.yaml
-    RELEASE=$(curl -fsSL https://api.github.com/repos/aceberg/WatchYourLAN/releases/latest | grep -o '"tag_name": *"[^"]*"' | cut -d '"' -f 4)
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/aceberg/WatchYourLAN/releases/latest | grep -o '"tag_name": *"[^"]*"' | cut -d '"' -f 4)
     curl -fsSL "https://proxy.seaslug.moe/github.com/aceberg/WatchYourLAN/releases/download/$RELEASE/watchyourlan_${RELEASE}_linux_amd64.deb" -o $(basename "https://github.com/aceberg/WatchYourLAN/releases/download/$RELEASE/watchyourlan_${RELEASE}_linux_amd64.deb")
     dpkg -i watchyourlan_${RELEASE}_linux_amd64.deb
     cp -R config.yaml /data/config.yaml

@@ -1,7 +1,6 @@
-
 # **AppName<span></span>-install.sh Scripts**
 
- `AppName-install.sh` scripts found in the `/install` directory. These scripts are responsible for the installation of the application. For this guide we take `/install/snipeit-install.sh` as example.
+`AppName-install.sh` scripts found in the `/install` directory. These scripts are responsible for the installation of the application. For this guide we take `/install/snipeit-install.sh` as example.
 
 ## Table of Contents
 
@@ -113,7 +112,7 @@ Example:
 $STD apt-get install -y \
   composer \
   git \
-  nginx 
+  nginx
 ```
 
 ### 3.2 **Collapse dependencies**
@@ -151,7 +150,7 @@ If possible install the app and all necessary files in `/opt/`
 Example for a git release:
 
 ```bash
-RELEASE=$(curl -fsSL https://api.github.com/repos/snipe/snipe-it/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/snipe/snipe-it/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 wget -q "https://github.com/snipe/snipe-it/archive/refs/tags/v${RELEASE}.zip"
 ```
 
@@ -190,7 +189,7 @@ read -p "Do you wish to enable HTTPS mode? (y/N): " httpschoice
 ### 6.2 **Verbosity**
 
 - Use the appropiate flag (**-q** in the examples) for a command to suppres its output
-Example:
+  Example:
 
 ```bash
 wget -q

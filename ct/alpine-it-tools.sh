@@ -29,7 +29,7 @@ function update_script() {
     exit 1
   fi
 
-  RELEASE=$(curl -fsSL https://api.github.com/repos/CorentinTh/it-tools/releases/latest | grep '"tag_name":' | cut -d '"' -f4)
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/CorentinTh/it-tools/releases/latest | grep '"tag_name":' | cut -d '"' -f4)
   if [ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ] || [ ! -f /opt/${APP}_version.txt ]; then
     DOWNLOAD_URL="https://github.com/CorentinTh/it-tools/releases/download/${RELEASE}/it-tools-${RELEASE#v}.zip"
     msg_info "Updating ${APP} LXC"

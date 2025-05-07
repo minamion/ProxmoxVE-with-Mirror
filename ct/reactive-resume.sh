@@ -28,7 +28,7 @@ function update_script() {
         msg_error "No ${APP} Installation Found!"
         exit
     fi
-    RELEASE=$(curl -fsSL https://api.github.com/repos/AmruthPillai/Reactive-Resume/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/AmruthPillai/Reactive-Resume/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
     if [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]] || [[ ! -f /opt/${APP}_version.txt ]]; then
         msg_info "Stopping services"
         systemctl stop Reactive-Resume
@@ -64,7 +64,7 @@ function update_script() {
         cp /opt/browserless/.env /opt/browserless.env
         rm -rf browserless
         brwsr_tmp=$(mktemp)
-        TAG=$(curl -fsSL https://api.github.com/repos/browserless/browserless/tags?per_page=1 | grep "name" | awk '{print substr($2, 3, length($2)-4) }')
+        TAG=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/browserless/browserless/tags?per_page=1 | grep "name" | awk '{print substr($2, 3, length($2)-4) }')
         curl -fsSL https://github.com/browserless/browserless/archive/refs/tags/v${TAG}.zip -O $brwsr_tmp
         unzip -q $brwsr_tmp
         mv browserless-${TAG}/ /opt/browserless

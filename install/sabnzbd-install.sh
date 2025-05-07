@@ -33,7 +33,7 @@ rm /etc/apt/sources.list.d/non-free.list
 msg_ok "Setup Unrar"
 
 msg_info "Installing SABnzbd"
-RELEASE=$(curl -fsSL https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/sabnzbd/sabnzbd/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
 mkdir -p /opt/sabnzbd
 $STD uv venv /opt/sabnzbd/venv
 temp_file=$(mktemp)

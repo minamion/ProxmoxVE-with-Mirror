@@ -37,7 +37,7 @@ $STD mysql -u root -e "GRANT ALL ON $DB_NAME.* TO '$DB_USER'@'localhost'; FLUSH 
 msg_ok "Set up MariaDB"
 
 msg_info "Installing projectsend"
-RELEASE=$(curl -fsSL https://api.github.com/repos/projectsend/projectsend/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/projectsend/projectsend/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 cd /opt
 curl -fsSL "https://proxy.seaslug.moe/github.com/projectsend/projectsend/releases/download/r${RELEASE}/projectsend-r${RELEASE}.zip" -o $(basename "https://github.com/projectsend/projectsend/releases/download/r${RELEASE}/projectsend-r${RELEASE}.zip")
 mkdir projectsend

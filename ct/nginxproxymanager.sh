@@ -33,7 +33,7 @@ function update_script() {
     $STD npm install -g pnpm@8.15
     msg_ok "Installed pnpm"
   fi
-  RELEASE=$(curl -fsSL https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest |
+  RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest |
     grep "tag_name" |
     awk '{print substr($2, 3, length($2)-4) }')
   msg_info "Stopping Services"

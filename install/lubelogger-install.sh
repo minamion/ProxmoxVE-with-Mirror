@@ -20,7 +20,7 @@ msg_ok "Installed Dependencies"
 msg_info "Installing LubeLogger"
 cd /opt
 mkdir -p /opt/lubelogger
-RELEASE=$(curl -fsSL https://api.github.com/repos/hargata/lubelog/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/hargata/lubelog/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 RELEASE_TRIMMED=$(echo "${RELEASE}" | tr -d ".")
 cd /opt/lubelogger
 curl -fsSL "https://proxy.seaslug.moe/github.com/hargata/lubelog/releases/download/v${RELEASE}/LubeLogger_v${RELEASE_TRIMMED}_linux_x64.zip" -o $(basename "https://github.com/hargata/lubelog/releases/download/v${RELEASE}/LubeLogger_v${RELEASE_TRIMMED}_linux_x64.zip")

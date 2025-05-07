@@ -31,7 +31,7 @@ function update_script() {
     fi
 
     # Crawling the new version and checking whether an update is required
-    RELEASE=$(curl -fsSL https://api.github.com/repos/Bubka/2FAuth/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/Bubka/2FAuth/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
     if [[ "${RELEASE}" != "$(cat /opt/2fauth_version.txt)" ]] || [[ ! -f /opt/2fauth_version.txt ]]; then
         msg_info "Updating $APP to ${RELEASE}"
 

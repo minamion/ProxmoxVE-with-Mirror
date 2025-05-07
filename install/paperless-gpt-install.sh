@@ -48,7 +48,7 @@ msg_ok "Installed Golang"
 
 msg_info "Setup Paperless-GPT"
 temp_file=$(mktemp)
-RELEASE=$(curl -fsSL https://api.github.com/repos/icereed/paperless-gpt/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/icereed/paperless-gpt/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 curl -fsSL "https://proxy.seaslug.moe/github.com/icereed/paperless-gpt/archive/refs/tags/v${RELEASE}.tar.gz" -o "$temp_file"
 tar zxf $temp_file
 mv paperless-gpt-${RELEASE} /opt/paperless-gpt

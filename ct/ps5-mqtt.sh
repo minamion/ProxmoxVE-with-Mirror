@@ -29,7 +29,7 @@ function update_script() {
         exit
     fi
 
-    RELEASE=$(curl -fsSL https://api.github.com/repos/FunkeyFlo/ps5-mqtt/releases/latest | jq -r '.tag_name')
+    RELEASE=$(curl -fsSL https://proxy.seaslug.moe/api.github.com/repos/FunkeyFlo/ps5-mqtt/releases/latest | jq -r '.tag_name')
 
     if [[ "${RELEASE}" != "$(cat /opt/ps5-mqtt_version.txt)" ]]; then
         msg_info "Stopping service"
