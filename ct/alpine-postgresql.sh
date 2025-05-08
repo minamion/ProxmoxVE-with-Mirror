@@ -20,6 +20,7 @@ color
 catch_errors
 
 function update_script() {
+  $STD sed -i 's/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g' /etc/apk/repositories
   msg_info "Updating Alpine Packages"
   $STD apk update
   $STD apk upgrade

@@ -21,6 +21,7 @@ catch_errors
 
 function update_script() {
     header_info
+    $STD sed -i 's/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g' /etc/apk/repositories
     msg_info "Updating Alpine Packages"
     apk update
     apk upgrade
